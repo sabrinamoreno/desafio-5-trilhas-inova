@@ -1,0 +1,71 @@
+.Inicio {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.InicioPrincipal {
+    position: relative;
+    height: 832px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 10px;
+}
+
+.InicioPrincipal::before {
+    content: "";
+    background-image: url(../../../../assets/Home/telemedicina.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.InicioPrincipal::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+.Inicio__Principal__Titulo {
+    font-weight: 500;
+    font-size: 44px;
+    color: #FFFFFF;
+}
+
+.Inicio__Principal__Destaque {
+    font-weight: 600;
+    font-size: 90px;
+    color: #FFFFFF;
+}
+
+.Inicio__Principal__texto {
+    font-weight: 300;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.Inicio__Principal__cta {
+    text-decoration: none;
+    border: 1px solid #FFFFFF;
+    padding: 27px 62px;
+    border-radius: 192px;
+    margin-top: 45px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: linear-gradient(to right, rgba(53, 143, 177, 0.9), rgba(0, 56, 161, 0.9));
+}

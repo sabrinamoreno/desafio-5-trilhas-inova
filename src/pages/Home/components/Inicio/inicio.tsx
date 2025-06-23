@@ -1,20 +1,24 @@
-import telemedicinaImg from '../../../../assets/Home/telemedicina.jpeg';
+import style from './Inicio.module.scss';
 
 
 function Inicio() {
 
     return (
-        <section className='Inicio'>
-            <img src={telemedicinaImg} className='Inicio__imagem' alt="telemedicina" />
-            <div className='Inicio__Principal'>
-                <h1 className='Inicio__Principal__Titulo'>
-                    Entenda sobre a <strong className='Inicio__Principal__Destaque'> Telemedicina</strong>
+        <section className={style.Inicio}>
+            <div className={style.InicioPrincipal}>
+                <h1 className={style.Inicio__Principal__Titulo}>
+                    Entenda sobre a
                 </h1>
-                <p className='Inicio__Principal__texto'>
-                    Verifique através de uma Dashboard interativa dados reais sobre a
-                    Telemedicina no Brasil
+                <h1>
+                    <strong className={style.Inicio__Principal__Destaque}> Telemedicina</strong>
+                </h1>
+                <p className={style.Inicio__Principal__texto}>
+                    Verifique através de uma Dashboard interativa
                 </p>
-                <a  href="#" className="Inicio__Principal__cta">
+                <p className={style.Inicio__Principal__texto}>
+                    dados reais sobre a Telemedicina no Brasil
+                </p>
+                <a  href="#" className={style.Inicio__Principal__cta}>
                     Veja Agora!
                 </a>
             </div>

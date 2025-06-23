@@ -1,6 +1,6 @@
 import ComoFunciona from "./components/ComoFunciona/comoFunciona";
 import Foooter from "./components/Foooter/Foooter";
-import Inicio from "./components/Inicio/inicio";
+import Inicio from "./components/Inicio/Inicio";
 import Marketing from "./components/Marketing/Marketing";
 import Quiz from "./components/Quiz/Quiz";
 import Section from "./components/Section/Section";
