@@ -1,11 +1,11 @@
 import Section from "../Section/Section";
 import comoFuncionaImg from "../../../../assets/Home/comoFunciona.png";
-
+import style from "./comoFunciona.module.scss"
 
 function ComoFunciona() {
 
     return (
-        <section className="ComoFunciona">
+        <section className={style.ComoFunciona}>
             <Section
                 titulo="Como funciona?"
                 texto=" A telemedicina utiliza plataformas digitais seguras, como a CallMed,
@@ -18,7 +18,7 @@ function ComoFunciona() {
           remoto, segunda opinião e apoio a regiões distantes, tornando o
           atendimento mais acessível e eficiente."
             />
-            <img className="ComoFunciona__Imagem" src={comoFuncionaImg} />
+            <img className={style.ComoFunciona__Imagem} src={comoFuncionaImg} />
         </section>
     )
 
