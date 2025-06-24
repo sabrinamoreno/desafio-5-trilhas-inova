@@ -1,0 +1,29 @@
+.Marketing {
+    display: flex;
+}
+
+.Marketing__Container {
+    width: 782px;
+}
+
+.Marketing__Container > section {
+  max-width: 100%; /* faz a section respeitar o container pai */
+  width: 100%; /* ou width: 100% se quiser esticar */
+}
+
+.Marketing__Container__Cta {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 0.7rem 1.6rem;
+    background: #2388E8;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: var(--font-2);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.Marketing__Imagem {
+    margin-top: 25px;
+}
