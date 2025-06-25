@@ -1,6 +1,4 @@
-import style from './inicio.module.scss';
-
-
+import style from "./Inicio.module.scss"
 function Inicio() {
 
     return (
