@@ -1,5 +1,6 @@
 import { useState } from "react";
-import UserCheck from '../../../../assets/Login/User check.png';
+import Eye from '../../../../assets/Login/Eye.png';
+import style from "./Formulario.module.scss"
 
 function Formulario() {
 
@@ -12,41 +13,36 @@ function Formulario() {
     };
 
     return (
-        <section className="login">
-            <form className="login__formulario" onSubmit={handleSubmit}>
-                <label className="login__formulario__label">
-                    Endereço de email
-                    <input className="login__formulario__email"
-                        type="email"
-                        placeholder="Endereço de email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </label>
+        <section className={style.login}>
+            <h1 className={style.login__titulo}>Entre em sua conta</h1>
+            <form className={style.login__formulario} onSubmit={handleSubmit}>
+                
+                <input className={style.login__formulario__email}
+                    type="email"
+                    placeholder="Endereço de email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
 
-                <label className="login__formulario__label">
-                    Senha
-                    <input className="login__formulario__senha"
-                        type="password"
-                        placeholder="Senha"
-                        value={senha}
-                        onChange={(e) => setSenha(e.target.value)}
-                        required
-                    />
-                </label>
+                <input className={style.login__formulario__senha}
+                    type="password"
+                    placeholder="Senha"
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
+                    required
+                />
 
-                <div className="login__formulario__esqueciSenha">
+                <div className={style.login__formulario__esqueciSenha}>
                     <a href="#">Esqueceu a senha?</a>
                 </div>
 
-                <button className="login__formulario__botao" type="submit" id="botaoLogin">
-                    <img src={UserCheck} />
+                <button className={style.login__formulario__botao} type="submit" id="botaoLogin">
                     Entrar
                 </button>
             </form>
 
-            <p className="login__formulario__conta">
+            <p className={style.login__formulario__conta}>
                 Não tem uma conta? <a href="#">Clique aqui</a>
             </p>
         </section>

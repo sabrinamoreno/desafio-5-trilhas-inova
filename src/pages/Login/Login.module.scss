@@ -1,0 +1,30 @@
+body, html{
+    background-color: #2388E8;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.principal__cabecalho {
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+    gap: 10px;
+}
+
+.principal__cabecalho__titulo {
+    font-family: var(--font-2);
+    font-size: 22px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 0.02em;
+}
