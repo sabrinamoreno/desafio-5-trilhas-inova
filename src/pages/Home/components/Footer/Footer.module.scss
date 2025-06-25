@@ -1,0 +1,25 @@
+.footer {
+    text-align: center;
+    font-family: var(--font-1);
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: 2.3rem;
+}
+
+.footer__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.footer__nav a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #f0f0f0;
+}

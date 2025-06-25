@@ -1,5 +1,5 @@
 import ComoFunciona from "./components/ComoFunciona/comoFunciona";
-import Foooter from "./components/Foooter/Foooter";
+import Foooter from "./components/Footer/Footer";
 import Inicio from "./components/Inicio/Inicio";
 import Marketing from "./components/Marketing/Marketing";
 import Quiz from "./components/Quiz/Quiz";
