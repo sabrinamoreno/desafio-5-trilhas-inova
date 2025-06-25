@@ -1,0 +1,99 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 452px;
+    height: 421px;
+    padding: 18px 32px;
+    background-color: #fff;
+    border-radius: 25px;
+    gap: 15px;
+}
+
+.login__titulo {
+    font-family: var(--font-2);
+    font-size: 30px;
+    font-weight: 600;
+    color: #1A4EA6;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.login__formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login__formulario__email {
+    background-image: url(../../../../assets/Login/User.png);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding: 16px 2px 16px 50px;
+    background-color: #90CAF9;
+    border-radius: 12px;
+    font-family: var(--font-2);
+    font-weight: 600;
+    font-size: 22px;
+    border: none;
+}
+
+.login__formulario__senha {
+    background-image: url(../../../../assets/Login/Lock.png);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding: 16px 2px 16px 50px;
+    background-color: #90CAF9;
+    border-radius: 12px;
+    font-family: var(--font-2);
+    font-weight: 600;
+    font-size: 22px;
+    border: none;
+}
+
+.login__formulario__email::placeholder,
+.login__formulario__senha::placeholder {
+    color: #fff;
+}
+
+.login__formulario__esqueciSenha {
+    text-decoration: none;
+    align-self: flex-end;
+    margin: 10px 0;
+}
+
+.login__formulario__esqueciSenha a {
+    text-decoration: none;
+    color: #2388E8;
+    font-family: var(--font-2);
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.login__formulario__botao {
+    background-image: url(../../../../assets/Login/UserCheck.png);
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    padding: 16px;
+    background-color: #2388E8;
+    border-radius: 12px;
+    font-family: var(--font-2);
+    font-weight: 600;
+    font-size: 22px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.login__formulario__conta {
+    font-family: var(--font-2);
+    font-size: 19px;
+    font-weight: 400;
+    color: #486CB9;
+    align-self: flex-end;
+    margin-top: 15px;
+}
+
+.login__formulario__conta a {
+    text-decoration: none;
+    color: #1E90FF;
+}
