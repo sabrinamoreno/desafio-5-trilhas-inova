@@ -6,13 +6,13 @@ import style from "./Login.module.scss"
 function Login (){
 
     return(
-        <main className={style.principal}>
-            <div className="principal__cabecalho">
-                <img src={Marca} />
-                <h1 className="principal__cabecalho__titulo">CallMed Atendimentos</h1>
+        <section className={style.principal}>
+            <div className={style.principal__cabecalho}>
+                <img src={Marca} alt="Logo CallMed" />
+                <h1 className={style.principal__cabecalho__titulo}>CallMed Atendimentos</h1>
             </div>
             <Formulario />
-        </main>
+        </section>
     )
 }
 
