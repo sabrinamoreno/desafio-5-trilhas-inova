@@ -1,4 +1,4 @@
-import style from './Inicio.module.scss';
+import style from './inicio.module.scss';
 
 
 function Inicio() {
