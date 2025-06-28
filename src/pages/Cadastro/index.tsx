@@ -1,16 +1,21 @@
 import Marca from '../../assets/Login/marca.png';
 import FormularioCadastro from './components/Formulario/FormularioCadastro';
+import style from './Cadastro.module.scss';
 
 function Cadastro() {
 
     return (
-        <div className='cadastro'>
-            <div className='cadastro__cabecalho'>
-                <img src={Marca} alt="Logo CallMed" />
-                <h1 className="cadastro__cabecalho__titulo">CallMed Atendimentos</h1>
+        <body className={style.cadastro__body}>
+            <div className={style.cadastro}>
+                <div className={style.cadastro__cabecalho}>
+                    <img src={Marca} alt="Logo CallMed" />
+                    <h1 className={style.cadastro__cabecalho__titulo}>
+                        CallMed Atendimentos
+                    </h1>
+                </div>
+                <FormularioCadastro />
             </div>
-            <FormularioCadastro />
-        </div>
+        </body>
     )
 
 
