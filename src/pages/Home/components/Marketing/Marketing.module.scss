@@ -1,3 +1,5 @@
+@import '../ComoFunciona/breakpoints.scss';
+
 .Marketing {
     display: flex;
 }
@@ -26,4 +28,123 @@
 
 .Marketing__Imagem {
     margin-top: 25px;
+}
+
+
+// aqui começa o mobile first para telas menores tbm
+
+.Marketing {
+
+
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  padding: 1.5rem 1rem;  
+  text-align: center;     
+  gap: 2rem;              
+}
+
+.Marketing__Container {
+  width: 100%;             
+  max-width: 500px;        
+  padding: 0 1rem;         
+}
+
+.Marketing__Container > section {
+  max-width: 100%;
+  width: 100%;
+ 
+}
+
+.Marketing__Container__Cta {
+  display: inline-block;
+  margin-top: 1rem;         
+  padding: 0.6rem 1.2rem;   
+  background: #2388E8;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: var(--font-2);
+  font-weight: 600;
+  font-size: 16px;         
+  text-align: center;       
+  box-sizing: border-box;   
+}
+
+.Marketing__Imagem {
+ 
+  margin-top: 1.5rem;       
+  width: 100%;              
+  max-width: 400px;         
+  height: auto;            
+  margin-left: auto;       
+  margin-right: auto;
+}
+
+
+@media (min-width: $breakpoint-small) {
+  .Marketing {
+    padding: 2rem 1.5rem; 
+    gap: 2.5rem;
+  }
+  .Marketing__Container {
+    max-width: 600px; 
+  }
+  .Marketing__Container__Cta {
+    font-size: 18px;    
+    padding: 0.7rem 1.5rem;
+  }
+  .Marketing__Imagem {
+    max-width: 500px;   
+  }
+}
+
+@media (min-width: $breakpoint-medium) {
+  .Marketing {
+    flex-direction: row;      
+    justify-content: center;  
+    align-items: center;      
+    padding: 3rem 2rem;      
+    gap: 3rem;                
+    text-align: left;         
+  }
+  .Marketing__Container {
+    width: 50%;            
+    max-width: 650px;      
+    padding: 0;            
+  }
+  .Marketing__Container__Cta {
+    font-size: 20px;       
+    padding: 0.7rem 1.6rem; 
+    margin-top: 1.2rem;    
+  }
+  .Marketing__Imagem {
+    margin-top: 0;       
+    width: 45%;             
+    max-width: 550px;     
+  }
+}
+
+@media (min-width: $breakpoint-large) {
+  .Marketing {
+    padding: 4rem 3rem;
+    gap: 4rem;
+  }
+  .Marketing__Container {
+    width: 782px; 
+    max-width: none; 
+  }
+  .Marketing__Imagem {
+    margin-top: 25px; 
+    width: auto; 
+    max-width: 600px;
+  }
+}
+
+@media (min-width: $breakpoint-xlarge) {
+  .Marketing {
+    max-width: 1400px; 
+    margin: 0 auto;    
+    padding: 4rem 0;   
+  }
 }

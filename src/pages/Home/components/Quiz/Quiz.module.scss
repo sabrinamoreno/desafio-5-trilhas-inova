@@ -1,3 +1,5 @@
+@import '../ComoFunciona/breakpoints.scss';
+
 .Quiz__subtitulo {
     font-family: var(--font-1);
     font-weight: 700;
@@ -19,4 +21,68 @@
     font-size: 20px;
     color: #fff;
     text-decoration: none;
+}
+
+
+// aqui começa o mobile first para telas menores tbm
+.Quiz__subtitulo {
+  font-family: var(--font-1);
+  font-weight: 700;
+  font-size: 28px;
+  color: #2388E8;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.Quiz__cta {
+  display: block;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  background-color: #2388E8;
+  padding: 12px 20px;
+  font-family: var(--font-2);
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+@media (min-width: $breakpoint-small) {
+  .Quiz__subtitulo {
+    font-size: 34px;
+    margin-top: 30px;
+    margin-bottom: 18px;
+  }
+  .Quiz__cta {
+    padding: 14px 25px;
+    font-size: 18px;
+    max-width: 350px;
+  }
+}
+
+@media (min-width: $breakpoint-medium) {
+  .Quiz__subtitulo {
+    font-size: 42px;
+    margin-top: 35px;
+    margin-bottom: 19px;
+    text-align: center;
+    padding: 0;
+  }
+  .Quiz__cta {
+    padding: 10px;
+    font-size: 20px;
+    max-width: 400px;
+  }
+}
+
+@media (min-width: $breakpoint-large) {
+  .Quiz__subtitulo {
+  }
+  .Quiz__cta {
+  }
 }

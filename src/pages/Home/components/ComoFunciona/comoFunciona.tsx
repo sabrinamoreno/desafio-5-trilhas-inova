@@ -2,6 +2,8 @@ import Section from "../Section/Section";
 import comoFuncionaImg from "../../../../assets/Home/comoFunciona.png";
 import style from "./comoFunciona.module.scss"
 
+
+
 function ComoFunciona() {
 
     return (

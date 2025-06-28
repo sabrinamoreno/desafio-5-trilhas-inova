@@ -1,3 +1,5 @@
+@import '../ComoFunciona/breakpoints.scss';
+
 .Inicio {
     font-family: var(--font-1);
     font-optical-sizing: auto;
@@ -69,4 +71,159 @@
     font-size: 20px;
     color: #FFFFFF;
     background: linear-gradient(to right, rgba(53, 143, 177, 0.9), rgba(0, 56, 161, 0.9));
+}
+
+
+.Inicio {
+  font-family: var(--font-1);
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.InicioPrincipal {
+  position: relative;
+  height: 600px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 15px; 
+  padding: 1rem; 
+  text-align: center; 
+}
+
+.InicioPrincipal::before {
+  content: "";
+  background-image: url(../../../../assets/Home/telemedicina.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.InicioPrincipal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+}
+
+
+ // aqui começa o mobile first para telas menores
+.Inicio__Principal__Titulo {
+  font-weight: 500;
+  font-size: 28px; 
+  color: #FFFFFF;
+  line-height: 1.2; 
+}
+
+.Inicio__Principal__Destaque {
+ 
+  font-weight: 600;
+  font-size: 48px; 
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+
+.Inicio__Principal__texto {
+
+  font-weight: 300;
+  font-size: 16px; 
+  color: #FFFFFF;
+  max-width: 90%; 
+  margin: 0 auto;
+}
+
+.Inicio__Principal__cta {
+  text-decoration: none;
+  border: 1px solid #FFFFFF;
+  padding: 18px 30px; 
+  border-radius: 192px;
+  margin-top: 25px; 
+  font-weight: 600;
+  font-size: 16px; 
+  color: #FFFFFF;
+  background: linear-gradient(to right, rgba(53, 143, 177, 0.9), rgba(0, 56, 161, 0.9));
+  text-align: center;
+  box-sizing: border-box; 
+}
+
+
+
+@media (min-width: $breakpoint-small) {
+  .InicioPrincipal {
+    height: 650px;
+    gap: 20px;
+  }
+  .Inicio__Principal__Titulo {
+    font-size: 34px; 
+  }
+  .Inicio__Principal__Destaque {
+    font-size: 60px; 
+  }
+  .Inicio__Principal__texto {
+    font-size: 18px; 
+    max-width: 80%;
+  }
+  .Inicio__Principal__cta {
+    padding: 22px 40px;
+    font-size: 18px;
+    margin-top: 35px;
+  }
+}
+
+@media (min-width: $breakpoint-medium) {
+  .InicioPrincipal {
+    height: 750px; 
+    gap: 25px;
+  }
+  .Inicio__Principal__Titulo {
+    font-size: 40px; 
+  }
+  .Inicio__Principal__Destaque {
+    font-size: 75px; 
+  }
+  .Inicio__Principal__texto {
+    font-size: 20px; 
+    max-width: 700px; 
+  }
+  .Inicio__Principal__cta {
+    padding: 27px 50px; 
+    font-size: 20px; 
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: $breakpoint-large) {
+  .InicioPrincipal {
+    height: 832px; 
+    gap: 10px; 
+  }
+  .Inicio__Principal__Titulo {
+    font-size: 44px; 
+  }
+  .Inicio__Principal__Destaque {
+    font-size: 90px; 
+  }
+  .Inicio__Principal__cta {
+    padding: 27px 62px;
+    margin-top: 45px; 
+  }
+}
+@media (min-width: $breakpoint-xlarge) {
+  .InicioPrincipal {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 }

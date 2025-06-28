@@ -1,3 +1,5 @@
+@import '../ComoFunciona/breakpoints.scss';
+
 .Section__Subtitulo {
     font-weight: 700;
     font-size: 42px;
@@ -13,4 +15,59 @@
     color: #000;
     font-family: var(--font-2);
     line-height: 1.5;
+}
+
+// aqui começa o mobile first para telas menores 
+.Section__Subtitulo {
+  font-weight: 700;
+  font-size: 28px;
+  color: #2388E8;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-family: var(--font-1);
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.Section__Texto {
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+  font-family: var(--font-2);
+  line-height: 1.5;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+@media (min-width: $breakpoint-small) {
+  .Section__Subtitulo {
+    font-size: 34px;
+    margin-top: 25px;
+    margin-bottom: 9px;
+  }
+  .Section__Texto {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: $breakpoint-medium) {
+  .Section__Subtitulo {
+    font-size: 42px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 0;
+  }
+  .Section__Texto {
+    font-size: 22px;
+    text-align: left;
+    padding: 0;
+  }
+}
+
+@media (min-width: $breakpoint-large) {
+  .Section__Subtitulo {
+  }
+  .Section__Texto {
+  }
 }

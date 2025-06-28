@@ -1,3 +1,6 @@
+@import '../ComoFunciona/breakpoints.scss';
+
+
 .footer {
     text-align: center;
     font-family: var(--font-1);
@@ -22,4 +25,102 @@
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     background-color: #f0f0f0;
+}
+
+
+
+
+// aqui começa o mobile first para telas menores tbm
+
+.footer {
+  text-align: center;
+  font-family: var(--font-1);
+  font-weight: 400;
+  font-size: 0.9rem;   
+  margin-top: 2rem;    
+  padding: 1.5rem 1rem; 
+  background-color: #f8f8f8; 
+  color: #333; 
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem; 
+  margin-bottom: 1.5rem;
+}
+
+.footer__nav a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.95rem; 
+  border: 1px solid transparent;
+  padding: 0.6rem 1.2rem; 
+  border-radius: 0.5rem;
+  background-color: #f0f0f0;
+  width: 90%;     
+  max-width: 280px; 
+  box-sizing: border-box; 
+}
+
+.footer__nav a:hover {
+  color: #007bff;
+  border-color: #007bff;
+}
+
+@media (min-width: $breakpoint-small) {
+  .footer {
+    font-size: 1rem;     
+    margin-top: 2.3rem;
+    padding: 1.5rem 2rem; 
+  }
+  .footer__nav {
+    gap: 1rem;
+  }
+  .footer__nav a {
+    font-size: 1rem;    
+    padding: 0.5rem 1rem; 
+    max-width: 320px;    
+  }
+}
+
+
+@media (min-width: $breakpoint-medium) {
+  .footer {
+    padding: 2rem 3rem; 
+  }
+  .footer__nav {
+    flex-direction: row; 
+    gap: 1.5rem; 
+  }
+  .footer__nav a {
+    width: auto;    
+    max-width: none; 
+  }
+}
+
+
+@media (min-width: $breakpoint-large) {
+  .footer {
+    padding: 2.5rem 4rem; 
+  }
+  .footer__nav {
+    gap: 2rem; 
+  }
+}
+
+
+@media (min-width: $breakpoint-xlarge) {
+  .footer {
+    max-width: 1200px; 
+    margin-left: auto; 
+    margin-right: auto;
+    padding: 3rem 0; 
+  }
+  .footer__nav {
+    margin-bottom: 2rem; 
+  }
 }
