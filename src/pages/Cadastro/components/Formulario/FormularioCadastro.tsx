@@ -1,7 +1,9 @@
 import { useState } from "react";
 
-function Cadastro() {
-  const [nome, setNome] = useState("");
+
+function FormularioCadastro (){
+
+const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [nascimento, setNascimento] = useState("");
   const [senha, setSenha] = useState("");
@@ -12,12 +14,11 @@ function Cadastro() {
   };
 
   return (
-    <section>
-      <h1>Venha ser CallMed!</h1>
-      <form onSubmit={handleSubmit}>
+    <section className="cadastro">
+      <form className="cadastro__formulario" onSubmit={handleSubmit}>
         <input
-          className={nome}
-          type="string"
+          className= "cadastro__formulario__nome"
+          type="text"
           placeholder="Nome completo"
           value={nome}
           onChange={(e) => setNome(e.target.value)}
@@ -25,7 +26,7 @@ function Cadastro() {
         />
 
         <input
-          className={email}
+          className= "cadastro__formulario__nome"
           type="email"
           placeholder="Endereço de e-mail"
           value={email}
@@ -34,7 +35,7 @@ function Cadastro() {
         />
 
         <input
-          className={nascimento}
+          className= "cadastro__formulario__nome"
           type="date"
           placeholder="Data de nascimento"
           value={nascimento}
@@ -43,27 +44,27 @@ function Cadastro() {
         />
 
         <input
-          className={senha}
+          className= "cadastro__formulario__nome"
           type="password"
           placeholder="Senha"
-          value={email}
+          value={senha}
           onChange={(e) => setSenha(e.target.value)}
           required
         />
 
         <input
-          className={confirmarSenha}
-          type="valid__password"
+          className= "cadastro__formulario__nome"
+          type="password"
           placeholder="Confirme a senha"
           value={confirmarSenha}
           onChange={(e) => setConfirmarSenha(e.target.value)}
           required
         />
 
-        <button type="submit">Cadastrar-se!</button>
+        <button className= "cadastro__formulario__botao" type="submit">Cadastrar-se!</button>
       </form>
     </section>
   );
 }
 
-export default Cadastro;
+export default FormularioCadastro;

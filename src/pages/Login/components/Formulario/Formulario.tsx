@@ -43,7 +43,7 @@ function Formulario() {
             </form>
 
             <p className={style.login__formulario__conta}>
-                Não tem uma conta? <a href="#">Clique aqui</a>
+                Não tem uma conta? <a href="/cadastro">Clique aqui</a>
             </p>
         </section>
     )
