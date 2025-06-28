@@ -1,7 +1,14 @@
-function AgendarConsultas (){
+import Cabecalho from "../components/Cabecalho/Cabecalho";
+import style from "./AgendarConsultas.module.scss"
+
+function AgendarConsultas() {
 
     return (
-        <h1>Agendar Consultas</h1>
+        <div className={style.agendar}>
+            <Cabecalho
+                titulo="Agendar Consultas"
+            />
+        </div>
     )
 }
 

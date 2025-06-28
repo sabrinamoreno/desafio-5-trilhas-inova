@@ -1,7 +1,14 @@
+import Cabecalho from "../components/Cabecalho/Cabecalho";
+import style from "./Perfil.module.scss"
+
 function Perfil (){
 
     return (
-        <h1>Perfil</h1>
+        <div className={style.perfil}>
+            <Cabecalho
+                titulo="Meu Perfil"
+            />
+        </div>
     )
 }
 
