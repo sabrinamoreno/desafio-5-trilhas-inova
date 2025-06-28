@@ -9,7 +9,6 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.126",
-    "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -43,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react": "^19.1.8",
     "@types/react-router-dom": "^5.3.3",
     "sass": "^1.89.2",
     "typescript-plugin-css-modules": "^5.1.0"
