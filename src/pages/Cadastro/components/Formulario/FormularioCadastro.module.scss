@@ -1,0 +1,102 @@
+.cadastro {
+    display: flex;
+    flex-direction: column;
+    width: 452px;
+    height: 475px;
+    padding: 18px 32px;
+    background-color: #fff;
+    border-radius: 25px;
+    gap: 15px;
+}
+
+.cadastro__titulo {
+    font-family: var(--font-2);
+    font-size: 30px;
+    font-weight: 600;
+    color: #1A4EA6;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    letter-spacing: 0.02rem;
+    text-align: center;
+}
+
+.cadastro__formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cadastro__formulario__nome {
+    background-image: url(../../../../assets/Cadastro/User.png);
+}
+
+.cadastro__formulario__email {
+    background-image: url(../../../../assets/Cadastro/Email.png);
+}
+
+.cadastro__formulario__nascimento {
+    background-image: url(../../../../assets/Cadastro/Calendario.png);
+}
+
+.cadastro__formulario__senha {
+    background-image: url(../../../../assets/Cadastro/Lock.png);
+}
+
+.cadastro__formulario__confirmarSenha {
+    background-image: url(../../../../assets/Cadastro/Check.png);
+}
+
+.cadastro__formulario__nome,
+.cadastro__formulario__email,
+.cadastro__formulario__nascimento,
+.cadastro__formulario__senha,
+.cadastro__formulario__confirmarSenha {
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding: 15px 2px 15px 50px;
+    background-color: #90CAF9;
+    border-radius: 8px;
+    font-family: var(--font-2);
+    font-weight: 600;
+    font-size: 19px;
+    color: #fff;
+    letter-spacing: 0.02rem;
+    border: none;
+}
+
+.cadastro__formulario__nome::placeholder,
+.cadastro__formulario__email::placeholder,
+.cadastro__formulario__nascimento::placeholder,
+.cadastro__formulario__senha::placeholder,
+.cadastro__formulario__confirmarSenha::placeholder {
+    color: #fff;
+}
+
+.cadastro__formulario__botao {
+    background-image: url(../../../../assets/Login/UserCheck.png);
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    padding: 16px;
+    background-color: #2388E8;
+    border-radius: 12px;
+    font-family: var(--font-2);
+    font-weight: 600;
+    font-size: 22px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.02rem;
+}
+
+.cadastro__formulario__nome,
+.cadastro__formulario__email,
+.cadastro__formulario__nascimento,
+.cadastro__formulario__senha,
+.cadastro__formulario__confirmarSenha {
+  &:focus {
+    border: 2px solid #2388E8;
+    outline: none;
+    box-shadow: 0 0 8px rgba(35, 136, 232, 0.6);
+    color: #fff;
+  }
+}

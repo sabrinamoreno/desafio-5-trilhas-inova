@@ -1,23 +1,37 @@
 import { useState } from "react";
+import style from "./FormularioCadastro.module.scss";
 
-
-function FormularioCadastro (){
-
-const [nome, setNome] = useState("");
+function FormularioCadastro() {
+  const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [nascimento, setNascimento] = useState("");
   const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
+
+  const formatarData = (value: string) => {
+    const digits = value.replace(/\D/g, "");
+    let formattedValue = digits;
+
+    if (digits.length > 2) {
+      formattedValue = `${digits.slice(0, 2)}/${digits.slice(2)}`;
+    }
+    if (digits.length > 4) {
+      formattedValue = `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4, 8)}`;
+    }
+
+    return formattedValue;
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 
   return (
-    <section className="cadastro">
-      <form className="cadastro__formulario" onSubmit={handleSubmit}>
+    <section className={style.cadastro}>
+      <h1 className={style.cadastro__titulo}>Venha ser CallMed!</h1>
+      <form className={style.cadastro__formulario} onSubmit={handleSubmit}>
         <input
-          className= "cadastro__formulario__nome"
+          className={style.cadastro__formulario__nome}
           type="text"
           placeholder="Nome completo"
           value={nome}
@@ -26,7 +40,7 @@ const [nome, setNome] = useState("");
         />
 
         <input
-          className= "cadastro__formulario__nome"
+          className={style.cadastro__formulario__email}
           type="email"
           placeholder="Endereço de e-mail"
           value={email}
@@ -35,16 +49,17 @@ const [nome, setNome] = useState("");
         />
 
         <input
-          className= "cadastro__formulario__nome"
-          type="date"
+          className={style.cadastro__formulario__nascimento}
+          type="text"
           placeholder="Data de nascimento"
           value={nascimento}
-          onChange={(e) => setNascimento(e.target.value)}
+          onChange={(e) => setNascimento(formatarData(e.target.value))}
+          maxLength={10}
           required
         />
 
         <input
-          className= "cadastro__formulario__nome"
+          className={style.cadastro__formulario__senha}
           type="password"
           placeholder="Senha"
           value={senha}
@@ -53,7 +68,7 @@ const [nome, setNome] = useState("");
         />
 
         <input
-          className= "cadastro__formulario__nome"
+          className={style.cadastro__formulario__confirmarSenha}
           type="password"
           placeholder="Confirme a senha"
           value={confirmarSenha}
@@ -61,7 +76,9 @@ const [nome, setNome] = useState("");
           required
         />
 
-        <button className= "cadastro__formulario__botao" type="submit">Cadastrar-se!</button>
+        <button className={style.cadastro__formulario__botao} type="submit">
+          Cadastrar-se
+        </button>
       </form>
     </section>
   );
