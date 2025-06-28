@@ -34,20 +34,28 @@
     font-family: var(--font-2);
     font-weight: 600;
     font-size: 22px;
+    color: #fff;
     border: none;
+}
+
+.login__formulario__senhaContainer {
+    position: relative;
+    width: 24.4rem;
 }
 
 .login__formulario__senha {
     background-image: url(../../../../assets/Login/Lock.png);
     background-repeat: no-repeat;
     background-position: 10px center;
-    padding: 16px 2px 16px 50px;
+    padding: 16px 10px 16px 50px;
     background-color: #90CAF9;
     border-radius: 12px;
     font-family: var(--font-2);
     font-weight: 600;
     font-size: 22px;
+    color: #fff;
     border: none;
+    width: 100%;
 }
 
 .login__formulario__email::placeholder,
@@ -67,6 +75,16 @@
     font-family: var(--font-2);
     font-size: 19px;
     font-weight: 400;
+}
+
+.login__formulario__email,
+.login__formulario__senha {
+  &:focus {
+    border: 2px solid #2388E8;
+    outline: none;
+    box-shadow: 0 0 8px rgba(35, 136, 232, 0.6);
+    color: #fff;
+  }
 }
 
 .login__formulario__botao {
@@ -96,4 +114,25 @@
 .login__formulario__conta a {
     text-decoration: none;
     color: #1E90FF;
+}
+
+.login__formulario__mostrarSenha {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__formulario__mostrarSenha img {
+    width: 100%;
+    height: 100%;
 }
