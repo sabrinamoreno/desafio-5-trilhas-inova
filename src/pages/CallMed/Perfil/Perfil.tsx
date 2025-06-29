@@ -1,7 +1,6 @@
 import Cabecalho from "../components/Cabecalho/Cabecalho";
 import style from "./Perfil.module.scss"
 
-function Perfil (){
 
 function Perfil() {
     return (
