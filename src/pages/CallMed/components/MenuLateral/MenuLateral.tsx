@@ -14,7 +14,7 @@ function MenuLateral() {
       { href: '/callmed/dashboard', label: 'Dashboard', icon: Dashboard },
       { href: '/callmed/perfil', label: 'Perfil', icon: Perfil },
       { href: '/callmed/consultas', label: 'Consultas', icon: Consultas },
-      { href: '/callmed/agendarconsultas', label: 'Agendar Consulta', icon: Agendar },
+      { href: '/callmed/agendarconsultas', label: 'Agendar Consulta', icon: Agendar,},
       { href: '/callmed/favoritos', label: 'Favoritos', icon: Favoritos },
    ];
 

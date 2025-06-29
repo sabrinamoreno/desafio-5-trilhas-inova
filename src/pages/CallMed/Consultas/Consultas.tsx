@@ -6,6 +6,7 @@ import fotoPadrao from "../../../assets/CallMed/foto.png";
 import { FaStar as SolidStar, FaRegStar as RegularStar } from 'react-icons/fa';
 import { FiCalendar, FiClock, FiX, FiPlus, FiAlertCircle } from 'react-icons/fi';
 
+
 type Consulta = {
   id: number;
   medico: string;
