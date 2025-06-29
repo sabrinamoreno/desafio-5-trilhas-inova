@@ -1,3 +1,93 @@
 .consultas{
     width: 85vw;
 }
+
+.consultas__container {
+    background-color: #F2F4F7;
+    height: 100%;
+    padding: 2rem;
+}
+
+.consultas__cabecalho {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.consultas__titulo {
+    font-family: var(--font-2);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #252A31;
+}
+
+.consultas__botaoPrimario {
+    background-color: #2388E8;
+    border-radius: 8px;
+    font-family: var(--font-2);
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #fff;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.consultas__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.consulta {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1.2rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #EAECF0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 0.7rem;
+}
+
+.consulta__medico {
+    font-family: var(--font-2);
+    font-size: 1rem;
+    font-weight: 400;
+    color: #252A31;
+}
+
+.consulta__especialidade,
+.consulta__dataHora {
+    font-family: var(--font-2);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #667085;
+    padding: 2px;
+}
+
+.consulta__status {
+    font-family: var(--font-2);
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: #fff;
+    padding: 3px 4px;
+    background-color: #12B76A;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.consulta__botao {
+    border-radius: 8px;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #667085;
+    padding: 0.5rem;
+    border: 1px solid #D0D5DD;
+    cursor: pointer;
+    background-color: #fff;
+    margin-left: auto;
+}
