@@ -94,6 +94,8 @@
 @media (max-width: 600px) {
   .card {
     align-items: column;
+    display: flex;
+    justify-content: center;
   }
 
   .botao {
