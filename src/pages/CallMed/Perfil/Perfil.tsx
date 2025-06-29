@@ -1,21 +1,45 @@
-function Perfil (){
 
+import React from 'react';
+import style from "./Perfil.module.scss"
+
+function Perfil() {
     return (
-        <div>
-            <h1>Perfil</h1>
+        
+        <div className="perfil-container">
 
-            <p>Informações Pessoais</p>
+            <h1 className="perfil-titulo">Perfil</h1>
 
-            <label>Nome Completo</label>
-            <input type="text" placeholder="Digite seu nome completo" />
+           
+            <p className="perfil-descricao">Informações Pessoais</p>
 
-            <label>E-mail</label>
-            <input type="email" placeholder="Digite seu email" />   
+            <div className="form-grupo">
+                <label className="form-label">Nome Completo</label>
+                <input
+                    type="text"
+                    className="form-input"
+                    placeholder=""
+                />
+            </div>
 
-            <label>CPF</label>
-            <input type="number" placeholder="Digite seu CPF" />
+            <div className="form-grupo">
+                <label className="form-label">E-mail</label>
+                <input
+                    type="email"
+                    className="form-input"
+                    placeholder=""
+                />
+            </div>
+
+            <div className="form-grupo">
+                <label className="form-label">CPF</label>
+                <input
+                    type="number"
+                    className="form-input"
+                    placeholder=""
+                />
+            </div>
         </div>
-    )
+    );
 }
 
 export default Perfil;
