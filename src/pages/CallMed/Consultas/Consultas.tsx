@@ -5,6 +5,7 @@ import style from "./Consultas.module.scss";
 import fotoPadrao from "../../../assets/CallMed/foto.png";
 import { FaStar as SolidStar, FaRegStar as RegularStar } from 'react-icons/fa';
 
+
 type Consulta = {
   id: number;
   medico: string;
