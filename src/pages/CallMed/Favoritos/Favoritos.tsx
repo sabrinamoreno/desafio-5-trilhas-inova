@@ -2,6 +2,7 @@ import Cabecalho from "../components/Cabecalho/Cabecalho";
 import style from "./Favoritos.module.scss";
 import { getMedicosFavoritos } from "./api.simulada";
 import React, { useEffect, useState } from "react";
+import favoritos from "src/assets/Callmed/star.png";
 
 type Medico = {
   id: number;
@@ -26,11 +27,10 @@ export default function Favoritos() {
 
   return (
     <>
-      <Cabecalho 
-        titulo="Médicos Favoritos"
-      />
+      <Cabecalho titulo="Médicos Favoritos" />
       <div className={style.Favoritos}>
         <h1 className="titulo__favoritos">Médicos Favoritos</h1>
+        <img src={favoritos} alt="estrela do(s) medico(a) favorito(a)" />
       </div>
       <div className="lista-medicos">
         {medicos.map((medico) => (
