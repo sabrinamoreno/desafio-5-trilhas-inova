@@ -29,17 +29,17 @@ export default function Favoritos() {
     <>
       <Cabecalho titulo="Médicos Favoritos" />
       <div className={style.Favoritos}>
-        <h1 className="titulo__favoritos">Médicos Favoritos</h1>
+        <h1 className={style.titulo__favoritos}>Médicos Favoritos</h1>
         <img src={favoritos} alt="estrela do(s) medico(a) favorito(a)" />
       </div>
-      <div className="lista-medicos">
+      <div className={style.lista__medicos}>
         {medicos.map((medico) => (
-          <div className="card" key={medico.id}>
-            <div className="info">
-              <h2 className="medico-nome">{medico.nome}</h2>
-              <p className="especialidade">{medico.especialidade}</p>
+          <div className={style.card} key={medico.id}>
+            <div className={style.info}>
+              <h2 className={style.medico__nome}>{medico.nome}</h2>
+              <p className={style.especialidade}>{medico.especialidade}</p>
             </div>
-            <button className="botao" type="submit">
+            <button className={style.botao} type="submit">
               Agendar Consulta
             </button>
           </div>
