@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-import React from 'react';
-import style from "./Perfil.module.scss";
 
 body { 
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5;
     min-height: 100vh;
     font-family: 'Roboto', sans-serif;
     position: relative;
@@ -75,8 +71,9 @@ body {
     border-color: #3498db;
     outline: none;
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-=======
+}
+
 .perfil{
     width: 85vw;
->>>>>>> 10163674f56b23c8d722b5b03bae823aade23071
+
 }
