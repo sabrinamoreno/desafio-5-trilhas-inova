@@ -1,11 +1,16 @@
-
-import React from 'react';
+import Cabecalho from "../components/Cabecalho/Cabecalho";
 import style from "./Perfil.module.scss"
+
+function Perfil (){
 
 function Perfil() {
     return (
-        
-        <div className="perfil-container">
+
+        <div className={style.perfil}>
+            <Cabecalho
+                titulo="Meu Perfil"
+            />
+            <h1>Perfil</h1>
 
             <h1 className="perfil-titulo">Perfil</h1>
 
@@ -21,23 +26,9 @@ function Perfil() {
                 />
             </div>
 
-            <div className="form-grupo">
-                <label className="form-label">E-mail</label>
-                <input
-                    type="email"
-                    className="form-input"
-                    placeholder=""
-                />
-            </div>
+            <label>CPF</label>
+            <input type="number" placeholder="Digite seu CPF" />
 
-            <div className="form-grupo">
-                <label className="form-label">CPF</label>
-                <input
-                    type="number"
-                    className="form-input"
-                    placeholder=""
-                />
-            </div>
         </div>
     );
 }

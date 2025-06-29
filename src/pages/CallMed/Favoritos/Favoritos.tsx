@@ -1,7 +1,14 @@
+import Cabecalho from "../components/Cabecalho/Cabecalho";
+import style from "./Favoritos.module.scss"
+
 function Favoritos (){
 
     return (
-        <h1>Favoritos</h1>
+        <div className={style.favoritos}>
+            <Cabecalho
+                titulo="Médicos Favoritos"
+            />
+        </div>
     )
 }
 

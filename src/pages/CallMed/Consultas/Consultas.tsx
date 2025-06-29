@@ -1,7 +1,14 @@
+import Cabecalho from "../components/Cabecalho/Cabecalho";
+import style from "./Consultas.module.scss"
+
 function Consultas (){
 
     return (
-        <h1>Consultas</h1>
+        <div className={style.consultas}>
+            <Cabecalho
+                titulo="Minhas Consultas"
+            />
+        </div>
     )
 }
 

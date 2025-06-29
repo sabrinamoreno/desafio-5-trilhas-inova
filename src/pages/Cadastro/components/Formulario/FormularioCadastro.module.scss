@@ -59,6 +59,8 @@
     font-family: var(--font-2);
     font-weight: 600;
     font-size: 19px;
+    color: #fff;
+    letter-spacing: 0.02rem;
     border: none;
 }
 
@@ -86,9 +88,15 @@
     letter-spacing: 0.02rem;
 }
 
-.cadastro__formulario__nascimento {
+.cadastro__formulario__nome,
+.cadastro__formulario__email,
+.cadastro__formulario__nascimento,
+.cadastro__formulario__senha,
+.cadastro__formulario__confirmarSenha {
   &:focus {
-    border-color: #4CAF50;
+    border: 2px solid #2388E8;
     outline: none;
+    box-shadow: 0 0 8px rgba(35, 136, 232, 0.6);
+    color: #fff;
   }
 }
