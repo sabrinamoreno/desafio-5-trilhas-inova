@@ -2,7 +2,7 @@ import Cabecalho from "../components/Cabecalho/Cabecalho";
 import style from "./Favoritos.module.scss";
 import { getMedicosFavoritos } from "./api.simulada";
 import React, { useEffect, useState } from "react";
-import favoritos from "src/assets/Callmed/star.png";
+import favoritos from "../../../assets/CallMed/star.png";
 
 type Medico = {
   id: number;
