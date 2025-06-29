@@ -1,3 +1,74 @@
-.perfil{
-    width: 85vw;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.perfil-container {
+    width: 968px;
+    height: 390px;
+    top: 89px;
+    left: 280px;
+    position: absolute;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 35px 40px;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.perfil-titulo {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.perfil-descricao {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #7f8c8d;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.form-grupo {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #34495e;
+    font-size: 15px;
+}
+
+.form-input {
+    width: 917px;
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid #D0D5DD;
+    background-color: #F2F4F7;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #333333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: #8c8c8c;
+}
+
+.form-input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
