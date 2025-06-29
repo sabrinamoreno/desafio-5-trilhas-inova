@@ -1,5 +1,4 @@
-
-body { 
+body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -12,13 +11,13 @@ body {
     height: 390px;
     top: 89px;
     left: 280px;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0; 
-    background-color: #ffffff;
-    padding: 35px 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
     position: absolute;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 35px 40px;
+    box-sizing: border-box;
     color: #333;
 }
 
@@ -54,26 +53,21 @@ body {
     width: 917px;
     height: 50px;
     border-radius: 8px;
-    border: 1px solid #D0D5DD; 
+    border: 1px solid #D0D5DD;
     background-color: #F2F4F7;
     padding: 0 15px;
     font-size: 16px;
-    color: #333333; 
+    color: #333333;
     box-sizing: border-box;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-input::placeholder {
-    color: #8c8c8c; 
+    color: #8c8c8c;
 }
 
 .form-input:focus {
     border-color: #3498db;
     outline: none;
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-}
-
-.perfil{
-    width: 85vw;
-
 }

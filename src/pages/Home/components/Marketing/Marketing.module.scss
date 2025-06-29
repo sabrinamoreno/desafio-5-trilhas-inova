@@ -1,3 +1,5 @@
+@import '../ComoFunciona/breakpoints.scss';   
+
 .Marketing {
     display: flex;
 }
@@ -26,4 +28,56 @@
 
 .Marketing__Imagem {
     margin-top: 25px;
+}
+
+// aqui commeçam os media queries
+
+@media (min-width: $breakpoint-medium) {
+  .Marketing {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    gap: 3rem;
+    text-align: left;
+  }
+  .Marketing__Container {
+    width: 50%;
+    max-width: 650px;
+    padding: 0;
+  }
+  .Marketing__Container__Cta {
+    font-size: 20px;
+    padding: 0.7rem 1.6rem;
+    margin-top: 1.2rem;
+  }
+  .Marketing__Imagem {
+    margin-top: 0;
+    width: 45%;
+    max-width: 550px;
+  }
+}
+
+@media (min-width: $breakpoint-large) {
+  .Marketing {
+    padding: 4rem 3rem;
+    gap: 4rem;
+  }
+  .Marketing__Container {
+    width: 782px;
+    max-width: none;
+  }
+  .Marketing__Imagem {
+    margin-top: 25px;
+    width: auto;
+    max-width: 600px;
+  }
+}
+
+@media (min-width: $breakpoint-xlarge) {
+  .Marketing {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 0;
+  }
 }
