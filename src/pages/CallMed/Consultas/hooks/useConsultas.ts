@@ -1,6 +1,13 @@
 import { useState, useEffect } from 'react';
 import fotoPadrao from "../../../../assets/CallMed/foto.png";
-import { Consulta } from '../../../../types/consultas';
+import { Consulta } from '../../../../types/consultas'
+
+const getSafeId = (consulta: any): number | string => {
+  return consulta.id || 
+         consulta.agendamento_id || 
+         consulta.consulta_id || 
+         `temp_${Date.now()}`;
+};
 
 export const useConsultas = () => {
   const [consultas, setConsultas] = useState<Consulta[]>([]);
@@ -29,7 +36,7 @@ export const useConsultas = () => {
       const data = await resposta.json();
       
       const consultasFormatadas = data.map((consulta: any) => ({
-        agendamento_id: consulta.id,
+        agendamento_id: getSafeId(consulta), // Usando a função segura
         medico_nome: consulta.medico_nome || 'Médico não informado',
         especialidade: consulta.especialidade || 'Especialidade não informada',
         data: formatarDataParaExibicao(consulta.data),
@@ -53,12 +60,17 @@ export const useConsultas = () => {
     fetchConsultas();
   }, []);
 
-  const handleDesmarcarConsulta = async (id: number) => {
+  const handleDesmarcarConsulta = async (id: number | string) => {
+    if (!id) {
+      setError('ID da consulta inválido');
+      return;
+    }
+
     try {
       const token_local = localStorage.getItem('token');
       
-      const resposta = await fetch(`http://nisystem.vps-kinghost.net/api/consultas/${id}/cancelar`, {
-        method: 'POST',
+      const resposta = await fetch(`http://nisystem.vps-kinghost.net/api/consultas/del/${id}`, {
+        method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token_local}`,
           'Content-Type': 'application/json'
@@ -78,7 +90,7 @@ export const useConsultas = () => {
     }
   };
 
-  const handleToggleFavorito = (id: number) => {
+  const handleToggleFavorito = (id: number | string) => {
     setConsultas(consultas.map(consulta => 
       consulta.agendamento_id === id ? { ...consulta, favorito: !consulta.favorito } : consulta
     ));

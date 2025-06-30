@@ -13,7 +13,6 @@ type ConsultaCardProps = {
 
 export const ConsultaCard = ({ 
   consulta, 
-  onToggleFavorito, 
   onDesmarcarConsulta,
   getStatusColor
 }: ConsultaCardProps) => (
@@ -47,23 +46,23 @@ export const ConsultaCard = ({
     </div>
 
     {consulta.status === 'agendada' && (
-      <button
-        onClick={() => onDesmarcarConsulta(consulta.agendamento_id)}
-        className={style.consulta__botao}
-        aria-label="Desmarcar"
-      >
-        Desmarcar
-      </button>
-    )}
-    {consulta.status === 'realizada' && (
-      <button
-        onClick={() => onDesmarcarConsulta(consulta.agendamento_id)}
-        className={style.consulta__botao}
-        aria-label="Favorita"
-      >
-        <RegularStar className={style.consulta__botaoIcone} />
-        Favorita
-      </button>
+        <button
+            onClick={() => {
+            // Adicione este console.log para verificar o ID
+            console.log('[DEBUG] ID ao desmarcar:', consulta.agendamento_id);
+            
+            if (!consulta.agendamento_id) {
+                console.error('Erro: agendamento_id está undefined!');
+                return;
+            }
+            
+            onDesmarcarConsulta(consulta.agendamento_id);
+            }}
+            className={style.consulta__botao}
+            aria-label="Desmarcar"
+        >
+            Desmarcar
+        </button>
     )}
   </div>
 );
