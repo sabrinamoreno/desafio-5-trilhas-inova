@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import style from "./DetalhesConsulta.module.scss";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 type Area = {
     id: number;
@@ -8,18 +9,25 @@ type Area = {
 };
 
 type Medico = {
-    id: number; 
+    id: number;
     nome: string;
 }
 
-type Horario ={
-    id: number; 
+type Horario = {
+    id: number;
     data: string;
     hora_inicio: string;
     hora_fim: string;
 }
 
 function DetalhesConsulta() {
+
+    const location = useLocation();
+    const dadosRecebidos = location.state as {
+        medicoId: number;
+        nome: string;
+        especialidade: string;
+    };
 
     const [horarioSelecionado, setHorarioSelecionado] = useState("");
     const [areaSelecionada, setAreaSelecionada] = useState("");
@@ -47,8 +55,17 @@ function DetalhesConsulta() {
             }
         })
             .then((response) => {
-                console.log(response.data)
                 setAreas(response.data);
+
+                if (dadosRecebidos?.especialidade) {
+                    const areaEncontrada = response.data.find(
+                        (area: Area) => area.nome === dadosRecebidos.especialidade
+                    );
+
+                    if (areaEncontrada) {
+                        setAreaSelecionada(areaEncontrada.id.toString());
+                    }
+                }
             })
             .catch((error) => {
                 console.error("Erro ao buscar especialidades: ", error);
@@ -68,6 +85,15 @@ function DetalhesConsulta() {
         })
             .then((response) => {
                 setMedicos(response.data);
+
+                if (dadosRecebidos?.medicoId) {
+                    const medicoExiste = response.data.some(
+                        (medico: Medico) => medico.id === dadosRecebidos.medicoId
+                    );
+                    if (medicoExiste) {
+                        setMedicoSelecionado(dadosRecebidos.medicoId.toString());
+                    }
+                }
             })
             .catch((error) => {
                 console.error("Erro ao buscar médicos por área:", error);
@@ -86,7 +112,6 @@ function DetalhesConsulta() {
             },
         })
             .then((response) => {
-                console.log(response.data);
                 setHorarios(response.data);
             })
             .catch((error) => {
@@ -120,9 +145,9 @@ function DetalhesConsulta() {
             );
 
             alert(response.data.mensagem);
+
         } catch (error: any) {
-            console.error("Erro ao agendar consulta:", error);
-            alert("Erro ao agendar consulta.");
+            alert("Erro ao agendar consulta");
         }
     };
 
@@ -177,11 +202,19 @@ function DetalhesConsulta() {
                         disabled={!medicoSelecionado}
                     >
                         <option value="">Selecione um horário</option>
-                        {horarios.map((horario) => (
-                            <option key={horario.id} value={horario.id.toString()}>
-                                {horario.hora_inicio}
-                            </option>
-                        ))}
+                        {horarios.map((horario) => {
+                            const dataFormatada = new Date(horario.data).toLocaleDateString("pt-BR", {
+                                day: "2-digit",
+                                month: "2-digit",
+                                year: "numeric"
+                            });
+
+                            return (
+                                <option key={horario.id} value={horario.id.toString()}>
+                                    {dataFormatada} às {horario.hora_inicio}
+                                </option>
+                            );
+                        })}
                     </select>
                     {erros.horario && <p className={style.consulta__error}>Selecione um horário</p>}
                 </label>
