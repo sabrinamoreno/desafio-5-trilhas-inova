@@ -82,3 +82,16 @@
     display: inline-block;
     margin-top: 5px;
 }
+
+.consulta__botao {
+    border-radius: 8px;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #667085;
+    padding: 0.5rem;
+    border: 1px solid #D0D5DD;
+    cursor: pointer;
+    background-color: #000;
+    margin-left: auto;
+}
