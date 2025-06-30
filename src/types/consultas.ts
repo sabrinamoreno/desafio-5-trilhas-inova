@@ -4,7 +4,7 @@ export type Consulta = {
   especialidade: string;
   data: string;
   hora: string;
-  status: 'Agendada' | 'Realizada' | 'Cancelada';
+  status: 'agendada' | 'realizada' | 'cancelada';
   preco_consulta: number;
   foto?: string;
   favorito: boolean;

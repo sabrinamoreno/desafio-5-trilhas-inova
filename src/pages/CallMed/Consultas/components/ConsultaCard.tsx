@@ -46,23 +46,22 @@ export const ConsultaCard = ({
       </div>
     </div>
 
-    {consulta.status === 'Agendada' && (
+    {consulta.status === 'agendada' && (
       <button
         onClick={() => onDesmarcarConsulta(consulta.agendamento_id)}
         className={style.consulta__botao}
         aria-label="Desmarcar"
       >
-        <FiX className={style.consulta__botaoIcone} />
         Desmarcar
       </button>
     )}
-    {consulta.status === 'Realizada' && (
+    {consulta.status === 'realizada' && (
       <button
         onClick={() => onDesmarcarConsulta(consulta.agendamento_id)}
         className={style.consulta__botao}
         aria-label="Favorita"
       >
-        <FiX className={style.consulta__botaoIcone} />
+        <RegularStar className={style.consulta__botaoIcone} />
         Favorita
       </button>
     )}

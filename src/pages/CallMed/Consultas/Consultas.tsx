@@ -24,9 +24,9 @@ export default function Consultas() {
 
   const getStatusColor = (status: Consulta['status']) => {
     switch(status) {
-      case 'Agendada': return '#12B76A';
-      case 'Cancelada': return '#F04438';
-      case 'Realizada': return '#667085';
+      case 'agendada': return '#12B76A';
+      case 'cancelada': return '#F04438';
+      case 'realizada': return '#667085';
       default: return '#667085';
     }
   };

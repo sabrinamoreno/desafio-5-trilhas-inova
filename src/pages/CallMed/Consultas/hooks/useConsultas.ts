@@ -70,7 +70,7 @@ export const useConsultas = () => {
       }
 
       setConsultas(consultas.map(consulta => 
-        consulta.agendamento_id === id ? { ...consulta, status: 'Cancelada' } : consulta
+        consulta.agendamento_id === id ? { ...consulta, status: 'cancelada' } : consulta
       ));
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erro ao cancelar consulta');
