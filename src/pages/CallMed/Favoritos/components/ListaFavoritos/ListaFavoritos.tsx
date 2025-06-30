@@ -34,7 +34,8 @@ function ListaFavoritos() {
         console.log(response.data);
       })
       .catch((error) => {
-        alert("Erro ao buscar dados do médico:", error);
+        console.error("Erro ao buscar dados do médico:", error);
+        alert("Erro ao buscar dados do médico.");
       });
   }, []);
 
@@ -59,7 +60,7 @@ function ListaFavoritos() {
       }
       alert(`informação ${id} deletada com sucesso.`);
     } catch {
-      alert("Erro ao deletar a informação:");
+      alert("Erro ao deletar a informação");
     }
   }
 
@@ -80,7 +81,7 @@ function ListaFavoritos() {
                   {medico.especialidade}
                 </p>
               </div>
-              <img src={Delete} onClick={() => deletePessoa(pessoa.id)} />
+              <img src={Delete} onClick={() => deletePessoa(medico.id)} />
             </div>
             <button className={style.botao} type="submit">
               Agendar Consulta

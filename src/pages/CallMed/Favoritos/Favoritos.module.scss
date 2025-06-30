@@ -1,12 +1,19 @@
-.favoritos{
+.favoritos {
   width: 90vw;
   display: flex;
   flex-direction: column;
 }
 
-.favoritos__corpo{
+.favoritos__corpo {
   height: auto;
   padding-left: 20px;
   padding-bottom: 50px;
-  background-color: #F2F4F7;
+  background-color: #f2f4f7;
+}
+
+@media (max-width: 768px) {
+  .favoritos {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
