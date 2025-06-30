@@ -5,15 +5,10 @@
 }
 
 .favoritos__corpo {
-  height: auto;
+  height: 100%;
   padding-left: 20px;
   padding-bottom: 50px;
   background-color: #f2f4f7;
 }
 
-@media (max-width: 768px) {
-  .favoritos {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
+

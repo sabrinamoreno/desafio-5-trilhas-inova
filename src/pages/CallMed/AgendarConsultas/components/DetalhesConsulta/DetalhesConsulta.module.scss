@@ -49,6 +49,10 @@
     cursor: pointer;
 }
 
+.consulta__select:hover{
+    border: 2px solid #2388E8;
+}
+
 .consulta__botao{
     border: none;
     background-color: #2388E8;
@@ -59,6 +63,10 @@
     padding: 14px 70px;
     border-radius: 8px;
     cursor: pointer;
+}
+
+.consulta__botao:hover{
+    border: 1px solid #252A31;
 }
 
 .consulta__error{

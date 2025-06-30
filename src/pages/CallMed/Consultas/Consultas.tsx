@@ -4,7 +4,6 @@ import Cabecalho from "../components/Cabecalho/Cabecalho";
 import { ConsultaCard } from './components/ConsultaCard';
 import { useConsultas } from './hooks/useConsultas';
 import style from "./Consultas.module.scss";
-import { FiPlus, FiAlertCircle } from 'react-icons/fi';
 import { Consulta } from '../../../types/consultas';
 
 export default function Consultas() {
@@ -12,10 +11,8 @@ export default function Consultas() {
   const {
     consultas,
     loading,
-    error,
     handleDesmarcarConsulta,
     handleToggleFavorito,
-    refetch
   } = useConsultas();
 
   const handleAgendarConsulta = () => {
@@ -33,10 +30,6 @@ export default function Consultas() {
 
   if (loading) {
     return <LoadingState />;
-  }
-
-  if (error) {
-    return <ErrorState error={error} onRetry={refetch} />;
   }
 
   return (
@@ -80,24 +73,6 @@ const LoadingState = () => (
     </div>
     <div className={style.consultas__carregando}>
       <p>Carregando consultas...</p>
-    </div>
-  </div>
-);
-
-const ErrorState = ({ error, onRetry }: { error: string, onRetry: () => void }) => (
-  <div className={style.consultas}>
-    <div className={style.consultas__topo}>
-      <Cabecalho titulo="Minhas Consultas" />
-    </div>
-    <div className={style.consultas__container}>
-      <FiAlertCircle className={style.consultas__erroIcone} />
-      <p>{error}</p>
-      <button 
-        onClick={onRetry}
-        className={style.consultas__botaoPrimario}
-      >
-        Tentar Novamente
-      </button>
     </div>
   </div>
 );
