@@ -1,0 +1,81 @@
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 30px;
+}
+
+.favoritos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.favoritos__titulo{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 18px;
+    color: #252A31;
+}
+
+.lista{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.lista__medicos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 307px;
+    height: 170px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    border: 1px solid #EAECF0;
+}
+
+.foto{
+    width: 48px;
+    height: 48px;
+}
+
+.lista__medicos__informacoes{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.informacoes{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.informacoes__nome {
+    width: 170px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    color: #252a31;
+}
+
+.informacoes__especialidade {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    color: #667085;
+}
+
+.botao {
+    width: 257px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    background: #2388e8;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    white-space: nowrap;
+}

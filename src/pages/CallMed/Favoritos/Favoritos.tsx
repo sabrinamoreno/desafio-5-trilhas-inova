@@ -1,15 +1,19 @@
 import Cabecalho from "../components/Cabecalho/Cabecalho";
-import style from "./Favoritos.module.scss"
+import style from "./Favoritos.module.scss";
+import ListaFavoritos from "./components/ListaFavoritos/ListaFavoritos";
 
-function Favoritos (){
 
-    return (
-        <div className={style.favoritos}>
-            <Cabecalho
-                titulo="Médicos Favoritos"
-            />
-        </div>
-    )
+
+export default function Favoritos() {
+ 
+
+  return (
+    <div className={style.favoritos}>
+      <Cabecalho 
+      titulo="Médicos Favoritos" />
+      <div className={style.favoritos__corpo}>
+      <ListaFavoritos />
+      </div>
+    </div>
+  );
 }
-
-export default Favoritos;

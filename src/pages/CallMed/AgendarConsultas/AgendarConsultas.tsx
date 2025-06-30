@@ -1,5 +1,7 @@
 import Cabecalho from "../components/Cabecalho/Cabecalho";
 import style from "./AgendarConsultas.module.scss"
+import DadosPaciente from "./components/DadosPaciente/DadosPaciente";
+import DetalhesConsulta from "./components/DetalhesConsulta/DetalhesConsulta";
 
 function AgendarConsultas() {
 
@@ -8,8 +10,10 @@ function AgendarConsultas() {
             <Cabecalho
                 titulo="Agendar Consultas"
             />
-
-            
+            <div className={style.conteudo}>
+            <DadosPaciente />
+            <DetalhesConsulta />
+            </div>
         </div>
     )
 }

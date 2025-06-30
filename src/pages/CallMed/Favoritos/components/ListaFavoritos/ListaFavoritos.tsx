@@ -1,0 +1,61 @@
+import { useEffect, useState } from "react";
+import { getMedicosFavoritos } from "../../api.simulada";
+import style from "./ListaFavoritos.module.scss"
+import favoritos from "../../../../../assets/CallMed/star.png";
+import Perfil from "../../../../../assets/CallMed/perfilFavoritos.png";
+import Delete from "../../../../../assets/CallMed/delete.png";
+
+type Medico = {
+    id: number;
+    nome: string;
+    especialidade?: string;
+    email?: string;
+    telefone?: string;
+    crm?: string;
+    preco_consulta?: string;
+};
+
+
+function ListaFavoritos() {
+
+    const [medicos, setMedicos] = useState<Medico[]>([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const data = await getMedicosFavoritos();
+            setMedicos(data);
+        }
+        fetchData();
+    }, []);
+
+    return (
+        <div className={style.conteudo}>
+            <div className={style.favoritos}>
+                <h1 className={style.favoritos__titulo}>Médicos Favoritos</h1>
+                <img src={favoritos} alt="estrela do(s) medico(a) favorito(a)" />
+            </div>
+            <div className={style.lista}>
+                {medicos.map((medico) => (
+                    <div className={style.lista__medicos} key={medico.id}>
+                        <div className={style.lista__medicos__informacoes}>
+                            <img className={style.foto} src={Perfil}/>
+                            <div className={style.informacoes}>
+                                <h2 className={style.informacoes__nome}>{medico.nome}</h2>
+                                <p className={style.informacoes__especialidade}>{medico.especialidade}</p>
+                            </div>
+                            <img src={Delete}/> 
+                        </div>
+                        <button className={style.botao} type="submit">
+                            Agendar Consulta
+                        </button>
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
+
+
+}
+
+
+export default ListaFavoritos;
