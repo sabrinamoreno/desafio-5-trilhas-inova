@@ -16,7 +16,7 @@ type Medico = {
 };
 
 function ListaFavoritos() {
-  const [medicos, setMedicos] = useState("");
+  const [medicos, setMedicos] = useState<Medico[]>([]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -24,14 +24,14 @@ function ListaFavoritos() {
     if (!token) return;
 
     axios
-      .get("http://nisystem.vps-kinghost.net//api/medicos/favoritos", {
+      .get("http://nisystem.vps-kinghost.net/api/medicos/favoritos", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
       .then((response) => {
-        setMedicos(response.data.medicos);
-        console.log(response.data.medicos);
+        setMedicos(response.data);
+        console.log(response.data);
       })
       .catch((error) => {
         console.error("Erro ao buscar dados do médico:", error);
@@ -45,7 +45,7 @@ function ListaFavoritos() {
         <img src={favoritos} alt="estrela do(s) medico(a) favorito(a)" />
       </div>
       <div className={style.lista}>
-        {medicos.map((Medico) => (
+        {medicos.map((medico) => (
           <div className={style.lista__medicos} key={medico.id}>
             <div className={style.lista__medicos__informacoes}>
               <img className={style.foto} src={Perfil} />
