@@ -4,6 +4,7 @@ import favoritos from "../../../../../assets/CallMed/star.png";
 import Perfil from "../../../../../assets/CallMed/perfilFavoritos.png";
 import Delete from "../../../../../assets/CallMed/delete.png";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 type Medico = {
   id: number;
@@ -17,6 +18,18 @@ type Medico = {
 
 function ListaFavoritos() {
   const [medicos, setMedicos] = useState<Medico[]>([]);
+  const navigate = useNavigate();
+
+
+  function handleAgendarConsulta(medico: Medico) {
+    navigate("/callmed/agendarconsultas", {
+      state: {
+        medicoId: medico.id,
+        nome: medico.nome,
+        especialidade: medico.especialidade,
+      },
+    });
+  }
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -39,29 +52,22 @@ function ListaFavoritos() {
       });
   }, []);
 
-  async function deletePessoa(id: number): Promise<void> {
-    try {
-      const token = localStorage.getItem("token");
+  const deletePessoa = (id: number) => {
+    const token = localStorage.getItem("token");
+    if (!token) return;
 
-      if (!token) return;
-
-      const resposta = await fetch(
-        `http://nisystem.vps-kinghost.net/api/medicos/favoritos${id}`,
-        {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      if (!resposta.ok) {
-        throw new Error(`Erro ao deletar a informação ${id}`);
-      }
-      alert(`informação ${id} deletada com sucesso.`);
-    } catch {
-      alert("Erro ao deletar a informação");
-    }
+    axios
+      .delete(`http://nisystem.vps-kinghost.net/api/medicos/favoritos`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then(() => {
+        setMedicos((prev) => prev.filter((medico) => medico.id !== id));
+      })
+      .catch((error) => {
+        console.error("Erro ao deletar médico favorito:", error);
+      });
   }
 
   return (
@@ -81,9 +87,13 @@ function ListaFavoritos() {
                   {medico.especialidade}
                 </p>
               </div>
-              <img src={Delete} onClick={() => deletePessoa(medico.id)} />
+              <img className={style.informacoes__delete} src={Delete} onClick={() => deletePessoa(medico.id)} />
             </div>
-            <button className={style.botao} type="submit">
+            <button
+              className={style.botao}
+              type="button"
+              onClick={() => handleAgendarConsulta(medico)}
+            >
               Agendar Consulta
             </button>
           </div>

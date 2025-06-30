@@ -20,7 +20,6 @@ function DadosPaciente() {
         })
             .then((response) => {
                 setNome(response.data.nome);
-                console.log(response.data.cpf);
                 setCPF(response.data.cpf);
             })
             .catch((error) => {
