@@ -69,9 +69,14 @@
     color: #FFFFFF;
 }
 
-@media (max-width: 850px){
+.botao:hover{
+    cursor: pointer;
+    background-color: darken(#2388E8, 10%);
+}
+
+@media (max-width: 1300px){
  .conteudo{
-    width: 90%;
+    width: 82%;
  }   
 }
 

@@ -2,6 +2,7 @@ import style from "./ProximasConsultas.module.scss"
 import perfil from "../../../../../assets/CallMed/perfilFavoritos.png"
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 type Consulta = {
     agendamento_id: number;
@@ -16,6 +17,7 @@ type Consulta = {
 
 function ProximasConsultas() {
   const [consultas, setConsultas] = useState<Consulta[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -30,7 +32,6 @@ function ProximasConsultas() {
           (consulta: Consulta) => consulta.status.toLowerCase() === "agendada"
         );
         setConsultas(consultasFiltradas);
-        console.log(consultas);
       })
     
       .catch((error) => {
@@ -64,7 +65,11 @@ function ProximasConsultas() {
                   </p>
                 </div>
               </div>
-              <button className={style.botao} type="button">
+              <button 
+              className={style.botao} 
+              type="button"
+              onClick={() => navigate("/callmed/consultas")}
+              >
                 Ver Detalhes
               </button>
             </div>

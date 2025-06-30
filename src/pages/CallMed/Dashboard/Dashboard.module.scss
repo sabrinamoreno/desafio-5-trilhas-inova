@@ -1,8 +1,9 @@
 .dashboard {
-    width: 90%;
+    width: 90vw;
 }
 
 .dashboard__conteudo {
+    width: auto;
     padding: 30px;
     height: 100%;
     background-color: #f2f4f7;
@@ -16,13 +17,13 @@
     gap: 30px;
 }
 
-@media (max-width: 1100px){
-    .dashboard{
-        width: 100vw;
-    }
+@media (max-width: 1300px) {
+  .dashboard {
+    width: 100vw;
+  }
 }
 
-@media (max-width: 850px){
+@media (max-width: 1300px){
     .dashboard__conteudo__consultas{
         flex-direction: column;
     }

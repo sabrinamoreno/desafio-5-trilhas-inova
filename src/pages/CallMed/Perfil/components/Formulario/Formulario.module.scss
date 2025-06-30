@@ -1,0 +1,153 @@
+.perfil-container {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 35px 40px;
+    box-sizing: border-box;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.perfil__header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+
+.perfil__header-content h2 {
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+.perfil__save-button {
+    background-color: #2388E8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: darken(#2388E8, 10%);
+    }
+}
+
+.form-grupo {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+    color: #252A31;
+}
+
+.form-input {
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid #D0D5DD;
+    background-color: #F2F4F7;
+    padding: 0 15px;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-size: 16px;
+    color: #333333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: #8c8c8c;
+}
+
+.form-input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.error{
+    padding-top: 5px;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-size: 14px;
+    color: #cc200f;
+}
+
+// aqui começam os medias query
+
+@media (max-width: 768px) {
+    .perfil-container {
+        height: auto;
+        padding: 20px;
+        top: 50px;
+        left: 5vw;
+    }
+
+    .perfil__header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .perfil__save-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .perfil-container {
+        width: 95vw;
+        padding: 15px;
+        top: 40px;
+        left: 2.5vw;
+    }
+
+    .perfil__header-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .perfil__save-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .perfil-container {
+        width: 100vw;
+        padding: 10px;
+        top: 30px;
+        left: 0;
+    }
+
+    .perfil__header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .perfil__save-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
