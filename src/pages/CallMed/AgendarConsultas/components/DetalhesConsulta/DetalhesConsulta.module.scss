@@ -58,6 +58,14 @@
     font-size: 14px;
     padding: 14px 70px;
     border-radius: 8px;
+    cursor: pointer;
+}
+
+.consulta__error{
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-size: 16px;
+    color: #cc200f;
 }
 
 @media (max-width: 1400px) {
