@@ -34,9 +34,34 @@ function ListaFavoritos() {
         console.log(response.data);
       })
       .catch((error) => {
-        console.error("Erro ao buscar dados do médico:", error);
+        alert("Erro ao buscar dados do médico:", error);
       });
   }, []);
+
+  async function deletePessoa(id: number): Promise<void> {
+    try {
+      const token = localStorage.getItem("token");
+
+      if (!token) return;
+
+      const resposta = await fetch(
+        `http://nisystem.vps-kinghost.net/api/medicos/favoritos${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      if (!resposta.ok) {
+        throw new Error(`Erro ao deletar a informação ${id}`);
+      }
+      alert(`informação ${id} deletada com sucesso.`);
+    } catch {
+      alert("Erro ao deletar a informação:");
+    }
+  }
 
   return (
     <div className={style.conteudo}>
@@ -55,7 +80,7 @@ function ListaFavoritos() {
                   {medico.especialidade}
                 </p>
               </div>
-              <img src={Delete} />
+              <img src={Delete} onClick={() => deletePessoa(pessoa.id)} />
             </div>
             <button className={style.botao} type="submit">
               Agendar Consulta
