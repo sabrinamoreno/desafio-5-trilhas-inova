@@ -1,4 +1,4 @@
-@import '../ComoFunciona/breakpoints.scss';   
+ 
 
 .Inicio {
     font-family: var(--font-1);
@@ -76,70 +76,83 @@
 
 // aqui commeçam os media queries
 
-@media (min-width: $breakpoint-small) {
-  .InicioPrincipal {
-    height: 650px;
-    gap: 20px;
-  }
-  .Inicio__Principal__Titulo {
-    font-size: 34px;
-  }
-  .Inicio__Principal__Destaque {
-    font-size: 60px;
-  }
-  .Inicio__Principal__texto {
-    font-size: 18px;
-    max-width: 80%;
-  }
-  .Inicio__Principal__cta {
-    padding: 22px 40px;
-    font-size: 18px;
-    margin-top: 35px;
-  }
+@media (max-width: 575.98px) { 
+    .inicio-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 15px;
+        min-height: auto;
+    }
+    .conteudo-texto {
+        margin-bottom: 20px;
+    }
+    .titulo-principal {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    .subtitulo {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .botao-principal {
+        width: 90%;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+    .imagem-hero {
+        width: 90%;
+        height: auto;
+    }
 }
 
-@media (min-width: $breakpoint-medium) {
-  .InicioPrincipal {
-    height: 750px;
-    gap: 25px;
-  }
-  .Inicio__Principal__Titulo {
-    font-size: 40px;
-  }
-  .Inicio__Principal__Destaque {
-    font-size: 75px;
-  }
-  .Inicio__Principal__texto {
-    font-size: 20px;
-    max-width: 700px;
-  }
-  .Inicio__Principal__cta {
-    padding: 27px 50px;
-    font-size: 20px;
-    margin-top: 40px;
-  }
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .inicio-container {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    .titulo-principal {
+        font-size: 36px;
+    }
+    .subtitulo {
+        font-size: 17px;
+    }
+    .imagem-hero {
+        width: 80%;
+    }
 }
 
-@media (min-width: $breakpoint-large) {
-  .InicioPrincipal {
-    height: 832px;
-    gap: 10px;
-  }
-  .Inicio__Principal__Titulo {
-    font-size: 44px;
-  }
-  .Inicio__Principal__Destaque {
-    font-size: 90px;
-  }
-  .Inicio__Principal__cta {
-    padding: 27px 62px;
-    margin-top: 45px;
-  }
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .inicio-container {
+        flex-direction: row; 
+        padding: 50px 30px;
+    }
+    .titulo-principal {
+        font-size: 48px;
+    }
+    .subtitulo {
+        font-size: 18px;
+    }
+    .imagem-hero {
+        width: 40%;
+    }
 }
 
-@media (min-width: $breakpoint-xlarge) {
-  .InicioPrincipal {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .inicio-container {
+        padding: 55px 40px;
+    }
+    .titulo-principal {
+        font-size: 56px;
+    }
+    .imagem-hero {
+        width: 35%;
+    }
+}
+
+@media (min-width: 1200px) { 
+    .inicio-container {
+        padding: 60px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
