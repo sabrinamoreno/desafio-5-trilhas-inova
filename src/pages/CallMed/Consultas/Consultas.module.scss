@@ -44,41 +44,12 @@
     gap: 1rem;
 }
 
-.consulta {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    padding: 1.2rem 1.5rem;
-    border-radius: 8px;
-    border: 1px solid #EAECF0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    gap: 0.7rem;
-}
-
-.consulta__medico {
+.consultas__carregando {
+    background-color: #F2F4F7;
+    padding: 2rem;
+    height: 100%;
     font-family: var(--font-2);
-    font-size: 1rem;
     font-weight: 400;
+    font-size: 18px;
     color: #252A31;
-}
-
-.consulta__especialidade,
-.consulta__dataHora {
-    font-family: var(--font-2);
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: #667085;
-    padding: 2px;
-}
-
-.consulta__status {
-    font-family: var(--font-2);
-    font-size: 0.7rem;
-    font-weight: 300;
-    color: #fff;
-    padding: 3px 4px;
-    background-color: #12B76A;
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 5px;
 }

@@ -2,12 +2,6 @@ import { useState, useEffect } from 'react';
 import fotoPadrao from "../../../../assets/CallMed/foto.png";
 import { Consulta } from '../../../../types/consultas'
 
-const getSafeId = (consulta: any): number | string => {
-  return consulta.id || 
-         consulta.agendamento_id || 
-         consulta.consulta_id || 
-         `temp_${Date.now()}`;
-};
 
 export const useConsultas = () => {
   const [consultas, setConsultas] = useState<Consulta[]>([]);
@@ -36,7 +30,7 @@ export const useConsultas = () => {
       const data = await resposta.json();
       
       const consultasFormatadas = data.map((consulta: any) => ({
-        agendamento_id: getSafeId(consulta), // Usando a função segura
+        agendamento_id: consulta.agendamento_id,
         medico_nome: consulta.medico_nome || 'Médico não informado',
         especialidade: consulta.especialidade || 'Especialidade não informada',
         data: formatarDataParaExibicao(consulta.data),
