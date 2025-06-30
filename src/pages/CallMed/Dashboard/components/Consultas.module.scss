@@ -1,0 +1,56 @@
+.agendadas{
+    background-color: #FFFFFF;
+    border: 1px solid #EAECF0;
+    border-radius: 8px;
+    width: 290px;
+    display: flex;
+    padding: 25px 0;
+    padding-left: 20px;
+    align-items: center;
+    gap: 20px;
+}
+
+.agendadas__imagem{
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.agendadas__container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+   
+}
+
+.agendadas__container__numero{
+    color: #252A31;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.agendadas__container__texto{
+    color: #667085;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.agendadas__icone{
+    background-color: #2388E8;
+}
+
+.realizadas__icone{
+    background-color: #12B76A;
+}
+
+.favoritos__icone{
+    background-color: #FDB022;
+}
+
+
+@media (max-width: 500px){
+    .agendadas{
+        width: 97%;
+    }
+}
