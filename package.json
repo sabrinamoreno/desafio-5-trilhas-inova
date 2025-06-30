@@ -10,11 +10,7 @@
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.126",
     "@types/react-dom": "^19.1.6",
-<<<<<<< HEAD
-    "@types/react-icons": "^2.2.7",
-=======
     "axios": "^1.10.0",
->>>>>>> fe60f05ebeb8adb26fe4dbc5a633cc6843e712e5
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^4.12.0",
