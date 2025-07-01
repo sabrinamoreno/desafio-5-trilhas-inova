@@ -7,7 +7,7 @@ type Props = {
 
 export default function Section({ titulo, texto }: Props) {
   return (
-    <section className="Section">
+    <section className={style.Section}>
       <h2 className={style.Section__Subtitulo}>{titulo}</h2>
       <p className={style.Section__Texto}>{texto}</p>
     </section>

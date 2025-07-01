@@ -1,6 +1,4 @@
- 
-
-.Inicio {
+ .Inicio {
     font-family: var(--font-1);
     font-optical-sizing: auto;
     font-style: normal;
@@ -74,8 +72,37 @@
 }
 
 
-// aqui commeçam os media queries
-
 @media (max-width: 1250px) { 
-    
+    .Inicio {
+        width: 100%;
+    }
+
+    .InicioPrincipal{
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) { 
+    .Inicio__Principal__Titulo{
+        font-size: 30px;
+    }
+
+    .Inicio__Principal__Destaque{
+        font-size: 47px;
+    }
+
+    .Inicio__Principal__texto{
+        font-size: 15px;
+    }
+
+    .InicioPrincipal{
+        width: auto;
+        height: 912px;
+    }
+}
+
+@media (max-width: 470px) {
+    .InicioPrincipal{
+        width: 125%;
+    }
 }

@@ -15,6 +15,13 @@
     gap: 1.5rem;
     margin-bottom: 1.5rem;
 }
+
+.footer__nav__espacamento{
+    display: flex;
+    gap: 1.5rem;
+    
+}
+
 .footer__nav a {
     color: #000;
     text-decoration: none;
@@ -26,3 +33,14 @@
     background-color: #f0f0f0;
 }
 
+@media (max-width: 1250px) { 
+    .footer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) { 
+    .footer__nav{
+        flex-direction: column;
+    }
+}
