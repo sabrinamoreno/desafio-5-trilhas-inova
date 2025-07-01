@@ -15,6 +15,7 @@ Este projeto está sendo desenvolvido no âmbito do programa **Trilhas Inova**, 
 - `Funcionalidade 3`:Tela de Cadastro e Login.
 - `Funcionalidade 4`:Dashboard interativo.
 - `Funcionalidade 5`:Telas de Consulta, Médicos favoritos, Agendamentos, e Perfil.
+- `Funcionalidade 6`:Banco de dados profissional. Testes em SQLite e em produção MySQL.
 
 ## Tecnologias a serem utilizadas 🚀 :
 
@@ -33,6 +34,7 @@ Este projeto está sendo desenvolvido no âmbito do programa **Trilhas Inova**, 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 
 
 
