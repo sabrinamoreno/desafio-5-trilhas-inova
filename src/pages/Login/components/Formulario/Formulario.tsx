@@ -3,6 +3,7 @@ import Eye from '../../../../assets/Login/Eye.png';
 import style from "./Formulario.module.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { validarLogin } from "../../../../utils/validacoes";
 
 function Formulario() {
     const navigate = useNavigate();
@@ -15,21 +16,12 @@ function Formulario() {
         senha: "",
     });
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    const validarCampos = () => {
-        return {
-            email: !emailRegex.test(email) ? "E-mail inválido" : "",
-            senha: senha.length < 6 ? "A senha deve ter pelo menos 6 caracteres" : "",
-        };
-    };
-
-
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const novosErros = validarCampos();
+        const novosErros = validarLogin(email, senha);
         setErros(novosErros);
+
 
         const valido = Object.values(novosErros).every((erro) => erro === "");
 

@@ -2,9 +2,6 @@ import { useEffect, useState } from "react";
 import style from "./DadosPaciente.module.scss";
 import axios from "axios";
 
-
-
-
 function DadosPaciente() {
 
     const [nome, setNome] = useState("");

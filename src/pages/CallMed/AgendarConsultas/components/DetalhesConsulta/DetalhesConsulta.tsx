@@ -1,27 +1,15 @@
 import { useEffect, useState } from "react";
 import style from "./DetalhesConsulta.module.scss";
-import axios from "axios";
 import { useLocation } from "react-router-dom";
+import { Area } from "../../../../../types/area";
+import { Medico } from "../../../../../types/medico";
+import { Horario } from "../../../../../types/horario";
+import { agendarConsulta, buscarAreas, buscarHorariosPorMedico, buscarMedicosPorArea } from "../../../../../utils/agendarServices";
+import { useNavigate } from "react-router-dom";
 
-type Area = {
-    id: number;
-    nome: string;
-};
-
-type Medico = {
-    id: number;
-    nome: string;
-}
-
-type Horario = {
-    id: number;
-    data: string;
-    hora_inicio: string;
-    hora_fim: string;
-}
 
 function DetalhesConsulta() {
-
+    const navigate = useNavigate();
     const location = useLocation();
     const dadosRecebidos = location.state as {
         medicoId: number;
@@ -43,115 +31,58 @@ function DetalhesConsulta() {
         horario: false,
     });
 
-    //Carrega especialidades
+    //Busca Especialidades
     useEffect(() => {
-        const token = localStorage.getItem("token");
-
-        if (!token) return;
-
-        axios.get("http://nisystem.vps-kinghost.net/api/areas", {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-            .then((response) => {
-                setAreas(response.data);
-
-                if (dadosRecebidos?.especialidade) {
-                    const areaEncontrada = response.data.find(
-                        (area: Area) => area.nome === dadosRecebidos.especialidade
-                    );
-
-                    if (areaEncontrada) {
-                        setAreaSelecionada(areaEncontrada.id.toString());
-                    }
-                }
+        buscarAreas()
+            .then((res) => {
+                setAreas(res.data);
+                const area = res.data.find((a: Area) => a.nome === dadosRecebidos.especialidade);
+                if (area) setAreaSelecionada(area.id.toString());
             })
-            .catch((error) => {
-                console.error("Erro ao buscar especialidades: ", error);
-            });
+            .catch(console.error);
     }, []);
 
-    //Carrega Médicos
+    //Busca Medicos
     useEffect(() => {
-        const token = localStorage.getItem("token");
+        if (!areaSelecionada) return;
 
-        if (!token || !areaSelecionada) return;
-
-        axios.get(`http://nisystem.vps-kinghost.net/api/medicos/area/${areaSelecionada}`, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        })
-            .then((response) => {
-                setMedicos(response.data);
-
-                if (dadosRecebidos?.medicoId) {
-                    const medicoExiste = response.data.some(
-                        (medico: Medico) => medico.id === dadosRecebidos.medicoId
-                    );
-                    if (medicoExiste) {
-                        setMedicoSelecionado(dadosRecebidos.medicoId.toString());
-                    }
-                }
+        buscarMedicosPorArea(areaSelecionada)
+            .then((res) => {
+                setMedicos(res.data);
+                const existe = res.data.find((m: Medico) => m.id === dadosRecebidos.medicoId);
+                if (existe) setMedicoSelecionado(dadosRecebidos.medicoId.toString());
             })
-            .catch((error) => {
-                console.error("Erro ao buscar médicos por área:", error);
-            });
+            .catch(console.error);
     }, [areaSelecionada]);
 
-    //Carrega Horários
+    //Buscar Disponibilidades
     useEffect(() => {
-        const token = localStorage.getItem("token");
+        if (!medicoSelecionado) return;
 
-        if (!token || !medicoSelecionado) return;
-
-        axios.get(`http://nisystem.vps-kinghost.net/api/medicos/disponibilidade/${medicoSelecionado}`, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        })
-            .then((response) => {
-                setHorarios(response.data);
-            })
-            .catch((error) => {
-                console.error("Erro ao buscar médicos por área:", error);
-            });
+        buscarHorariosPorMedico(medicoSelecionado)
+            .then((res) => setHorarios(res.data))
+            .catch(console.error);
     }, [medicoSelecionado]);
 
-    //Agenda consulta
     const handleAgendarConsulta = async () => {
-        const token = localStorage.getItem("token");
-
-        const validacao = {
+        const camposVazios = {
             area: !areaSelecionada,
             medico: !medicoSelecionado,
             horario: !horarioSelecionado,
         };
-        setErros(validacao);
 
-        if (validacao.area || validacao.medico || validacao.horario) return;
+        setErros(camposVazios);
+
+        if (Object.values(camposVazios).some(Boolean)) return;
 
         try {
-            const response = await axios.post(
-                "http://nisystem.vps-kinghost.net/api/consultas/agendar",
-                {
-                    medico_id: parseInt(medicoSelecionado),
-                    disponibilidade_id: parseInt(horarioSelecionado),
-                },
-                {
-                    headers: { Authorization: `Bearer ${token}` },
-                }
-            );
-
-            alert(response.data.mensagem);
-
-        } catch (error: any) {
+            const res = await agendarConsulta(+medicoSelecionado, +horarioSelecionado);
+            alert(res.data.mensagem);
+            navigate("/callmed/consultas");
+        } catch (err) {
             alert("Erro ao agendar consulta");
         }
     };
-
-
 
     return (
         <>

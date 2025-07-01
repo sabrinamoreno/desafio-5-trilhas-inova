@@ -1,4 +1,4 @@
-export type Medico = {
+export type Area = {
     id: number;
     nome: string;
-}
+};
