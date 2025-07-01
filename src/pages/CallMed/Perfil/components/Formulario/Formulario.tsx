@@ -1,17 +1,10 @@
 import { useEffect, useState } from "react";
 import style from "./Formulario.module.scss";
-import axios from "axios";
-
-function formatarCPF(valor: string) {
-  return valor
-    .replace(/\D/g, "") 
-    .replace(/(\d{3})(\d)/, "$1.$2")
-    .replace(/(\d{3})(\d)/, "$1.$2")
-    .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-}
+import { formatarCPF } from "../../../../../utils/formatters";
+import { atualizarUsuario, buscarUsuario } from "../../../../../utils/usuarioService";
+import { validarCPF, validarEmail } from "../../../../../utils/validacoes";
 
 function Formulario() {
-
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [cpf, setCPF] = useState("");
@@ -23,62 +16,37 @@ function Formulario() {
     });
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
-
-        if (!token) return;
-
-        axios.get("http://nisystem.vps-kinghost.net/api/usuarios/me", {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-            .then((response) => {
-                setNome(response.data.nome);
-                setEmail(response.data.email);
-                setCPF(response.data.cpf);
+        buscarUsuario()
+            .then((res) => {
+                setNome(res.data.nome);
+                setEmail(res.data.email);
+                setCPF(res.data.cpf);
             })
-            .catch((error) => {
-                console.error("Erro ao buscar dados do usuário:", error);
+            .catch((err) => {
+                console.error("Erro ao buscar dados do usuário:", err);
             });
     }, []);
 
-
-    async function validarFormulario() {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const cpfRegex = /^\d{11}$/;
-
+    const validarFormulario = async () => {
         const errosValidacao = {
             nome: nome.trim() === "",
-            email: !emailRegex.test(email),
-            cpf: !cpfRegex.test(cpf),
+            email: !validarEmail(email),
+            cpf: !validarCPF(cpf),
         };
 
         setErros(errosValidacao);
 
         const semErros = Object.values(errosValidacao).every((erro) => !erro);
-
         if (!semErros) return;
 
-        const token = localStorage.getItem("token");
-        if (!token) return;
-
         try {
-            const resposta = await axios.put(
-                "http://nisystem.vps-kinghost.net/api/usuarios/atualizar",
-                { nome, email, cpf },
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                }
-            );
-
+            const resposta = await atualizarUsuario({ nome, email, cpf });
             alert(resposta.data.mensagem);
         } catch (error) {
             console.error("Erro ao atualizar usuário:", error);
             alert("Erro ao atualizar as informações.");
         }
-    }
+    };
 
 
     return (
@@ -135,7 +103,7 @@ function Formulario() {
                     className={style["form-input"]}
                     placeholder="Digite seu CPF"
                     onChange={(e) =>
-                        setCPF(e.target.value.replace(/\D/g, "").slice(0, 11)) // mantém só os números
+                        setCPF(e.target.value.replace(/\D/g, "").slice(0, 11))
                     }
                 />
                 {erros.cpf && <p className={style.error}>CPF inválido (11 dígitos)</p>}

@@ -2,13 +2,8 @@ import { useState } from "react";
 import style from "./FormularioCadastro.module.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
-
-const converterParaISO = (data: string) => {
-  const [dia, mes, ano] = data.split("/");
-  return `${ano}-${mes}-${dia}`;
-};
-
+import { converterParaISO, formatarData } from "../../../../utils/formatters";
+import { validarCampos } from "../../../../utils/validacoes";
 
 
 function FormularioCadastro() {
@@ -27,37 +22,11 @@ function FormularioCadastro() {
     confirmarSenha: "",
   });
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const dataRegex = /^\d{2}\/\d{2}\/\d{4}$/;
-
-  const formatarData = (value: string) => {
-    const digits = value.replace(/\D/g, "");
-    let formattedValue = digits;
-
-    if (digits.length > 2) {
-      formattedValue = `${digits.slice(0, 2)}/${digits.slice(2)}`;
-    }
-    if (digits.length > 4) {
-      formattedValue = `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4, 8)}`;
-    }
-
-    return formattedValue;
-  };
-
-  const validarCampos = () => {
-    return {
-      nome: nome.trim() === "" ? "Preencha seu nome completo" : "",
-      email: !emailRegex.test(email) ? "E-mail inválido" : "",
-      nascimento: !dataRegex.test(nascimento) ? "Data no formato DD/MM/AAAA" : "",
-      senha: senha.length < 6 ? "Mínimo de 6 caracteres" : "",
-      confirmarSenha: senha !== confirmarSenha ? "Senhas diferentes" : "",
-    };
-  };
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const novosErros = validarCampos();
+    const novosErros = validarCampos(nome, email, nascimento, senha, confirmarSenha);
     setErros(novosErros);
+
 
     const valido = Object.values(novosErros).every((erro) => erro === "");
     if (valido) {

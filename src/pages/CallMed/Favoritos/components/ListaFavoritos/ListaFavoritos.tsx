@@ -3,25 +3,26 @@ import style from "./ListaFavoritos.module.scss";
 import favoritos from "../../../../../assets/CallMed/star.png";
 import Perfil from "../../../../../assets/CallMed/perfilFavoritos.png";
 import Delete from "../../../../../assets/CallMed/delete.png";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { MedicoFavorito } from "../../../../../types/medicoFavorito";
+import { buscarFavoritos, desfavoritarMedico } from "../../../../../utils/favoritosServices";
 
-type Medico = {
-  id: number;
-  nome: string;
-  especialidade?: string;
-  email?: string;
-  telefone?: string;
-  crm?: string;
-  preco_consulta?: string;
-};
+
 
 function ListaFavoritos() {
-  const [medicos, setMedicos] = useState<Medico[]>([]);
+  const [medicos, setMedicos] = useState<MedicoFavorito[]>([]);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    buscarFavoritos()
+      .then((res) => setMedicos(res.data))
+      .catch((err) => {
+        console.error("Erro ao buscar dados do médico:", err);
+        alert("Erro ao buscar dados do médico.");
+      });
+  }, []);
 
-  function handleAgendarConsulta(medico: Medico) {
+  const handleAgendarConsulta = (medico: MedicoFavorito) => {
     navigate("/callmed/agendarconsultas", {
       state: {
         medicoId: medico.id,
@@ -29,46 +30,18 @@ function ListaFavoritos() {
         especialidade: medico.especialidade,
       },
     });
-  }
+  };
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    if (!token) return;
-
-    axios
-      .get("http://nisystem.vps-kinghost.net/api/medicos/favoritos", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+  const handleDesfavoritar = (id: number) => {
+    desfavoritarMedico(id)
+      .then(() => {
+        setMedicos((prev) => prev.filter((m) => m.id !== id));
       })
-      .then((response) => {
-        setMedicos(response.data);
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error("Erro ao buscar dados do médico:", error);
-        alert("Erro ao buscar dados do médico.");
+      .catch((err) => {
+        console.error("Erro ao desfavoritar médico:", err);
+        alert("Erro ao desfavoritar médico.");
       });
-  }, []);
-
-  const deletePessoa = (id: number) => {
-  const token = localStorage.getItem("token");
-  if (!token) return;
-
-  axios
-    .delete(`http://nisystem.vps-kinghost.net/api/medicos/desfavoritar/${id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    .then(() => {
-      setMedicos((prev) => prev.filter((medico) => medico.id !== id));
-    })
-    .catch((error) => {
-      console.error("Erro ao deletar médico favorito:", error);
-    });
-};
+  };
 
 
   return (
@@ -88,7 +61,7 @@ function ListaFavoritos() {
                   {medico.especialidade}
                 </p>
               </div>
-              <img className={style.informacoes__delete} src={Delete} onClick={() => deletePessoa(medico.id)} />
+              <img className={style.informacoes__delete} src={Delete} onClick={() => handleDesfavoritar(medico.id)} />
             </div>
             <button
               className={style.botao}

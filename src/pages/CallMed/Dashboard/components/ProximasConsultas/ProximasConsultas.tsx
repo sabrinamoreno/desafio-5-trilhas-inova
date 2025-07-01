@@ -3,16 +3,7 @@ import perfil from "../../../../../assets/CallMed/perfilFavoritos.png"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
-type Consulta = {
-    agendamento_id: number;
-    medico_nome: string;
-    especialidade: string;
-    data: string;
-    hora: string;
-    status: string;
-    preco_consulta: string;
-}
+import { Consulta } from "../../../../../types/consultas";
 
 
 function ProximasConsultas() {
