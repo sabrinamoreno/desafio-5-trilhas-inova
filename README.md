@@ -15,7 +15,7 @@ Este projeto está sendo desenvolvido no âmbito do programa **Trilhas Inova**, 
 - `Funcionalidade 3`:Tela de Cadastro e Login.
 - `Funcionalidade 4`:Dashboard interativo.
 - `Funcionalidade 5`:Telas de Consulta, Médicos favoritos, Agendamentos, e Perfil.
-- `Funcionalidade 6`:Banco de dados profissional. Testes em SQLite e em produção MySQL.
+- `Funcionalidade 6`:Banco de dados profissional. Testes em SQLite e produção em MySQL.
 
 ## Tecnologias a serem utilizadas 🚀 :
 
