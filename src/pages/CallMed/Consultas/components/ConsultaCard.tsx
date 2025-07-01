@@ -1,17 +1,19 @@
 import fotoPadrao from "../../../../assets/CallMed/foto.png";
 import style from "./ConsultaCard.module.scss";
 import { Consulta } from "../../../../types/consultas"
+import star from "../../../../assets/CallMed/star2.png";
 
 type ConsultaCardProps = {
   consulta: Consulta;
-  onToggleFavorito: (id: number) => void;
   onDesmarcarConsulta: (id: number) => void;
+  onFavoritarMedico: (id: number) => void;
   getStatusColor: (status: Consulta['status']) => string;
 };
 
 export const ConsultaCard = ({ 
-  consulta, 
+  consulta,
   onDesmarcarConsulta,
+  onFavoritarMedico,
   getStatusColor
 }: ConsultaCardProps) => (
   <div className={style.consulta}>
@@ -42,21 +44,36 @@ export const ConsultaCard = ({
     </div>
 
     {consulta.status === 'agendada' && (
-        <button
-            onClick={() => {
+      <button
+        onClick={() => {
             
-            if (!consulta.agendamento_id) {
-                console.error('Erro: agendamento_id está undefined!');
-                return;
-            }
+          if (!consulta.agendamento_id) {
+            console.error('Erro: agendamento_id está undefined!');
+            return;
+          }
             
-            onDesmarcarConsulta(consulta.agendamento_id);
-            }}
-            className={style.consulta__botao}
-            aria-label="Desmarcar"
-        >
-            Desmarcar
-        </button>
+          onDesmarcarConsulta(consulta.agendamento_id);
+        }}
+        className={style.consulta__botaoDesmarcar}
+        aria-label="Desmarcar"
+      >
+        Desmarcar
+      </button>
     )}
+
+    {consulta.status === 'realizada' && (
+      <button
+        onClick={() => {
+
+          onFavoritarMedico(consulta.medico_id);
+        }}
+        className={style.consulta__botaoFavorito}
+        aria-label="Favoritar"
+      >
+        <img className={style.consulta__favoritoIcone} src={star} alt="Favoritar" />
+        Favoritar
+      </button>
+    )}
+
   </div>
 );

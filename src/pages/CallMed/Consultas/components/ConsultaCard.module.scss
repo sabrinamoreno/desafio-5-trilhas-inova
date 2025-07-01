@@ -37,7 +37,7 @@
     margin-top: 5px;
 }
 
-.consulta__botao {
+.consulta__botaoDesmarcar {
     border-radius: 8px;
     font-family: var(--font-2);
     font-weight: 400;
@@ -48,4 +48,25 @@
     cursor: pointer;
     background-color: #fff;
     margin-left: auto;
+}
+
+.consulta__botaoFavorito {
+    border-radius: 8px;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #fff;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: #FDB022;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.consulta__favoritoIcone {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.2rem;
 }
