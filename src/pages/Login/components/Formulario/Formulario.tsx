@@ -26,7 +26,7 @@ function Formulario() {
         const valido = Object.values(novosErros).every((erro) => erro === "");
 
         if (valido) {
-            axios.post("http://nisystem.vps-kinghost.net/api/usuarios/auth/login", {
+            axios.post("https://nisystem.vps-kinghost.net/api/usuarios/auth/login", {
                 email,
                 senha,
             })

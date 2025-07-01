@@ -11,7 +11,7 @@ function ConsultasAgendadas() {
     if (!token) return;
 
     axios
-      .get("http://nisystem.vps-kinghost.net/api/consultas", {
+      .get("https://nisystem.vps-kinghost.net/api/consultas", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

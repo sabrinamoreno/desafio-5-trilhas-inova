@@ -39,7 +39,7 @@ function FormularioCadastro() {
       };
 
       axios
-        .post("http://nisystem.vps-kinghost.net/api/usuarios/auth/register", payload)
+        .post("https://nisystem.vps-kinghost.net/api/usuarios/auth/register", payload)
         .then((response) => {
           alert(response.data.mensagem || "Usuário registrado com sucesso!");
           setNome("");

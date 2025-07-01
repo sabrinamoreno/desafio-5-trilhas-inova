@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://nisystem.vps-kinghost.net/api";
+const API = "https://nisystem.vps-kinghost.net/api";
 const token = localStorage.getItem("token");
 
 const headers = {

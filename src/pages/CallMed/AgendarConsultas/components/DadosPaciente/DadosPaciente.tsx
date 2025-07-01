@@ -12,7 +12,7 @@ function DadosPaciente() {
 
         if (!token) return;
 
-        axios.get("http://nisystem.vps-kinghost.net/api/usuarios/me", {
+        axios.get("https://nisystem.vps-kinghost.net/api/usuarios/me", {
             headers: {
                 Authorization: `Bearer ${token}`
             }

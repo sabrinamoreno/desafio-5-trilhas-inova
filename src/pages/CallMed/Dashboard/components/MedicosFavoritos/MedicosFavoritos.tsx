@@ -12,7 +12,7 @@ function MedicosFavoritos() {
         if (!token) return;
 
         axios
-            .get("http://nisystem.vps-kinghost.net/api/medicos/favoritos", {
+            .get("https://nisystem.vps-kinghost.net/api/medicos/favoritos", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

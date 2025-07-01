@@ -18,7 +18,7 @@ export const useConsultas = () => {
         throw new Error('Usuário não autenticado');
       }
 
-      const resposta = await fetch('http://nisystem.vps-kinghost.net/api/consultas', {
+      const resposta = await fetch('https://nisystem.vps-kinghost.net/api/consultas', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token_local}`
@@ -61,7 +61,7 @@ export const useConsultas = () => {
     try {
       const token_local = localStorage.getItem('token');
       
-      const resposta = await fetch(`http://nisystem.vps-kinghost.net/api/consultas/del/${id}`, {
+      const resposta = await fetch(`https://nisystem.vps-kinghost.net/api/consultas/del/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token_local}`,
@@ -87,7 +87,7 @@ export const useConsultas = () => {
     try {
       const token_local = localStorage.getItem('token');
 
-      const resposta = await fetch(`http://nisystem.vps-kinghost.net/api/medicos/favoritar/${id}`, {
+      const resposta = await fetch(`https://nisystem.vps-kinghost.net/api/medicos/favoritar/${id}`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token_local}`,
