@@ -10,11 +10,11 @@ Este projeto está sendo desenvolvido no âmbito do programa **Trilhas Inova**, 
 
 ## Funcionalidades 🧩 : 
 
--  `Funcionalidade 1`:Landing page interativa, com chamada para ação.
+- `Funcionalidade 1`:Landing page interativa, com chamada para ação.
 - `Funcionalidade 2`:Quiz interativo, com informações úteis sobre saúde.
 - `Funcionalidade 3`:Tela de Cadastro e Login.
--  `Funcionalidade 4`:Dashboard interativo.
-- `Funcionalidade 5: Telas de Consulta, Médicos favoritos, Agendamentos, e Perfil.
+- `Funcionalidade 4`:Dashboard interativo.
+- `Funcionalidade 5`:Telas de Consulta, Médicos favoritos, Agendamentos, e Perfil.
 
 ## Tecnologias a serem utilizadas 🚀 :
 
@@ -48,4 +48,4 @@ Este projeto está sendo desenvolvido no âmbito do programa **Trilhas Inova**, 
 
 ## Status do projeto :
 
-![Nuxt](https://img.shields.io/badge/#-Concluído...-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
+![Nuxt](https://img.shields.io/badge/C-Concluído...-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
