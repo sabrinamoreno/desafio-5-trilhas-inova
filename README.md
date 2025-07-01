@@ -10,17 +10,19 @@ Este projeto está sendo desenvolvido no âmbito do programa **Trilhas Inova**, 
 
 ## Funcionalidades 🧩 : 
 
-- Falta colocar
-- Falta colocar
-- Falta colocar
-- Falta colocar
+- `Funcionalidade 1`:Landing page interativa, com chamada para ação.
+- `Funcionalidade 2`:Quiz interativo, com informações úteis sobre saúde.
+- `Funcionalidade 3`:Tela de Cadastro e Login.
+- `Funcionalidade 4`:Dashboard interativo.
+- `Funcionalidade 5`:Telas de Consulta, Médicos favoritos, Agendamentos, e Perfil.
+- `Funcionalidade 6`:Banco de dados profissional. Testes em SQLite e produção em MySQL.
 
 ## Tecnologias a serem utilizadas 🚀 :
 
 - HTML5
 - CSS3
 - JavaScript
-- Frameworks: 
+- Frameworks ou Bibliotecas: React 
 - Ferramentas de design : Figma
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -29,6 +31,10 @@ Este projeto está sendo desenvolvido no âmbito do programa **Trilhas Inova**, 
 ![Figma](https://img.shields.io/badge/Figma-696969?style=for-the-badge&logo=figma&logoColor=figma)
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
 ![Vscode](https://img.shields.io/badge/Vscode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 
 
 
@@ -37,7 +43,6 @@ Este projeto está sendo desenvolvido no âmbito do programa **Trilhas Inova**, 
 
 | Integrante                                | Trilha                             |
 |-------------------------------------------|------------------------------------|
-| Maria Clara Araujo Costa                  | Front end                          |
 | Gerson Moisés Diniz Nascimento            | Front end                          |
 | Israel De Jesus Souza Araujo              | Front end                          |
 | Antonio Agostinho Gomes Bezerra           | Front end                          |
@@ -48,4 +53,4 @@ Este projeto está sendo desenvolvido no âmbito do programa **Trilhas Inova**, 
 
 ## Status do projeto :
 
-![Nuxt](https://img.shields.io/badge/Em-Desenvolvimento...-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
+![Nuxt](https://img.shields.io/badge/C-Concluído...-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)

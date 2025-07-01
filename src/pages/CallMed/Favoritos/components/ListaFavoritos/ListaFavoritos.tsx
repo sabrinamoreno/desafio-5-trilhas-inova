@@ -53,22 +53,23 @@ function ListaFavoritos() {
   }, []);
 
   const deletePessoa = (id: number) => {
-    const token = localStorage.getItem("token");
-    if (!token) return;
+  const token = localStorage.getItem("token");
+  if (!token) return;
 
-    axios
-      .delete(`http://nisystem.vps-kinghost.net/api/medicos/favoritos`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then(() => {
-        setMedicos((prev) => prev.filter((medico) => medico.id !== id));
-      })
-      .catch((error) => {
-        console.error("Erro ao deletar médico favorito:", error);
-      });
-  }
+  axios
+    .delete(`http://nisystem.vps-kinghost.net/api/medicos/desfavoritar/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then(() => {
+      setMedicos((prev) => prev.filter((medico) => medico.id !== id));
+    })
+    .catch((error) => {
+      console.error("Erro ao deletar médico favorito:", error);
+    });
+};
+
 
   return (
     <div className={style.conteudo}>

@@ -1,6 +1,4 @@
- 
-
-.Inicio {
+ .Inicio {
     font-family: var(--font-1);
     font-optical-sizing: auto;
     font-style: normal;
@@ -74,85 +72,37 @@
 }
 
 
-// aqui commeçam os media queries
+@media (max-width: 1250px) { 
+    .Inicio {
+        width: 100%;
+    }
 
-@media (max-width: 575.98px) { 
-    .inicio-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 15px;
-        min-height: auto;
+    .InicioPrincipal{
+        width: 100%;
     }
-    .conteudo-texto {
-        margin-bottom: 20px;
+}
+
+@media (max-width: 700px) { 
+    .Inicio__Principal__Titulo{
+        font-size: 30px;
     }
-    .titulo-principal {
-        font-size: 28px;
-        margin-bottom: 10px;
+
+    .Inicio__Principal__Destaque{
+        font-size: 47px;
     }
-    .subtitulo {
+
+    .Inicio__Principal__texto{
         font-size: 15px;
-        margin-bottom: 20px;
     }
-    .botao-principal {
-        width: 90%;
-        padding: 12px 20px;
-        font-size: 16px;
-    }
-    .imagem-hero {
-        width: 90%;
-        height: auto;
+
+    .InicioPrincipal{
+        width: auto;
+        height: 912px;
     }
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) { 
-    .inicio-container {
-        flex-direction: column;
-        padding: 40px 20px;
-    }
-    .titulo-principal {
-        font-size: 36px;
-    }
-    .subtitulo {
-        font-size: 17px;
-    }
-    .imagem-hero {
-        width: 80%;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) { 
-    .inicio-container {
-        flex-direction: row; 
-        padding: 50px 30px;
-    }
-    .titulo-principal {
-        font-size: 48px;
-    }
-    .subtitulo {
-        font-size: 18px;
-    }
-    .imagem-hero {
-        width: 40%;
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) { 
-    .inicio-container {
-        padding: 55px 40px;
-    }
-    .titulo-principal {
-        font-size: 56px;
-    }
-    .imagem-hero {
-        width: 35%;
-    }
-}
-
-@media (min-width: 1200px) { 
-    .inicio-container {
-        padding: 60px 0;
-        max-width: 1200px;
-        margin: 0 auto;
+@media (max-width: 470px) {
+    .InicioPrincipal{
+        width: 125%;
     }
 }

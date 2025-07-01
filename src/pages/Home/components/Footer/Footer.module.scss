@@ -15,6 +15,13 @@
     gap: 1.5rem;
     margin-bottom: 1.5rem;
 }
+
+.footer__nav__espacamento{
+    display: flex;
+    gap: 1.5rem;
+    
+}
+
 .footer__nav a {
     color: #000;
     text-decoration: none;
@@ -26,66 +33,14 @@
     background-color: #f0f0f0;
 }
 
-// aqui commeçam os media queries
-
-
-@media (max-width: 575.98px) { 
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-    .footer-coluna {
-        margin-bottom: 25px;
+@media (max-width: 1250px) { 
+    .footer {
         width: 100%;
     }
-    .footer-titulo {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-    .footer-link, .footer-texto {
-        font-size: 14px;
-    }
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) { 
-    .footer-container {
+@media (max-width: 700px) { 
+    .footer__nav{
         flex-direction: column;
-        text-align: center;
-        padding: 30px;
-    }
-    .footer-coluna {
-        margin-bottom: 20px;
-        width: 80%; 
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) { 
-    .footer-container {
-        padding: 40px 20px;
-        justify-content: space-around; 
-    }
-    .footer-coluna {
-        width: 45%; 
-        margin-bottom: 20px;
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) { 
-    .footer-container {
-        padding: 45px 30px;
-    }
-    .footer-coluna {
-        width: 30%; 
-    }
-}
-
-@media (min-width: 1200px) { 
-    .footer-container {
-        padding: 50px 0;
-        max-width: 1200px;
-        margin: 0 auto;
     }
 }

@@ -23,70 +23,8 @@
     text-decoration: none;
 }
 
-// aqui commeçam os media queries
-
-@media (max-width: 575.98px) { 
-    .quiz-container {
-        padding: 30px 15px;
-        width: 95%;
-        margin: 0 auto;
-    }
-    .pergunta {
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
-    .opcao-quiz {
-        width: 100%;
-        margin-bottom: 10px;
-        padding: 10px;
-        font-size: 15px;
-    }
-    .botao-quiz {
-        width: 100%;
-        padding: 12px 20px;
-        font-size: 16px;
-    }
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) { 
-    .quiz-container {
-        padding: 40px 20px;
-        width: 85%;
-        margin: 0 auto;
-    }
-    .pergunta {
-        font-size: 22px;
-    }
-    .opcao-quiz {
-        width: 80%; 
-        margin: 0 auto 15px auto;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) { 
-    .quiz-container {
-        width: 700px;
-        padding: 50px 30px;
-        margin: 0 auto;
-    }
-    .pergunta {
-        font-size: 26px;
-    }
-    .opcao-quiz {
-        width: 70%;
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) { 
-    .quiz-container {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-}
-
-@media (min-width: 1200px) { 
-    .quiz-container {
-        max-width: 900px;
-        margin: 0 auto;
-    }
+@media (max-width: 1250px) { 
+   .Quiz{
+    width: 90%;
+ }
 }

@@ -108,3 +108,9 @@
     font-size: 14px;
     color: #1A4EA6;
 }
+
+@media (max-width: 560px) { 
+    .cadastro{
+        width: 80%;
+    }
+}

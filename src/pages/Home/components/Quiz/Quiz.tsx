@@ -3,7 +3,7 @@ import style from "./Quiz.module.scss"
 function Quiz() {
 
     return (
-        <section className="Quiz">
+        <section className={style.Quiz}>
             <h2 className={style.Quiz__subtitulo}>
                 Prove seus conhecimentos em Telemedicina!
             </h2>

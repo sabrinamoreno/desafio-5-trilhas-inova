@@ -8,15 +8,13 @@ function ComoFunciona() {
         <section className={style.ComoFunciona}>
             <Section
                 titulo="Como funciona?"
-                texto=" A telemedicina utiliza plataformas digitais seguras, como a CallMed,
-                para conectar pacientes e médicos em tempo real. O atendimento ocorre
-                via vídeo, áudio ou mensagens, após o agendamento online. Durante a
-                consulta, o médico pode avaliar sintomas, solicitar exames, emitir
-                receitas e encaminhar para atendimento presencial, se necessário. As
-                informações são registradas em prontuários eletrônicos protegidos.
-                Além das consultas, a telemedicina também permite monitoramento
-                remoto, segunda opinião e apoio a regiões distantes, tornando o
-                atendimento mais acessível e eficiente."
+                texto=" A telemedicina usa plataformas seguras, como a CallMed, 
+                para conectar médicos e pacientes em tempo real por vídeo, áudio 
+                ou mensagens. Após o agendamento online, o médico pode avaliar sintomas, 
+                prescrever exames e medicamentos, ou encaminhar para atendimento presencial. 
+                Os dados ficam registrados em prontuários eletrônicos protegidos. 
+                Também permite monitoramento remoto, segunda opinião e apoio a áreas distantes,
+                 tornando o atendimento mais acessível e eficiente."
             />
             <img className={style.ComoFunciona__Imagem} src={comoFuncionaImg} />
         </section>
