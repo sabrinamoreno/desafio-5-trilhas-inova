@@ -17,69 +17,8 @@
     line-height: 1.5;
 }
 
-// aqui commeçam os media queries
-
-@media (max-width: 575.98px) { 
-    .section-container {
-        padding: 30px 15px;
-    }
-    .section-titulo {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-    .section-paragrafo {
-        font-size: 14px;
-    }
-    .section-imagem {
-        width: 90%;
-        height: auto;
-    }
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) { 
-    .section-container {
-        padding: 40px 20px;
-    }
-    .section-titulo {
-        font-size: 28px;
-    }
-    .section-paragrafo {
-        font-size: 15px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) { 
-    .section-container {
-        padding: 50px 30px;
-        display: flex;
-        flex-direction: row; 
-        align-items: center;
-        justify-content: space-around;
-    }
-    .section-conteudo-texto {
-        width: 50%;
-        text-align: left;
-    }
-    .section-imagem {
-        width: 40%;
-    }
-    .section-titulo {
-        font-size: 32px;
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) { 
-    .section-container {
-        padding: 55px 40px;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-}
-
-@media (min-width: 1200px) { 
-    .section-container {
-        padding: 60px 0;
-        max-width: 1100px;
-        margin: 0 auto;
+@media (max-width: 1250px){
+    .Section{
+        width: 100%;
     }
 }

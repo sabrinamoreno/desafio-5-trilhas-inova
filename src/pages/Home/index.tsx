@@ -4,12 +4,13 @@ import Inicio from "./components/Inicio/inicio";
 import Marketing from "./components/Marketing/Marketing";
 import Quiz from "./components/Quiz/Quiz";
 import Section from "./components/Section/Section";
+import style from "./Home.module.scss"
 
 
 function App() {
 
     return (
-        <>
+        <div className={style.conteudo}>
             <Inicio />
             <Section
                 titulo="O que é Telemedicina?"
@@ -39,7 +40,7 @@ function App() {
             <Quiz />
             <Marketing />
             <Foooter/>
-        </>
+        </div>
     )
 
 }
