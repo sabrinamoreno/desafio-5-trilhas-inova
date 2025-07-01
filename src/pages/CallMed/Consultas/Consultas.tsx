@@ -4,7 +4,7 @@ import Cabecalho from "../components/Cabecalho/Cabecalho";
 import { ConsultaCard } from './components/ConsultaCard';
 import { useConsultas } from './hooks/useConsultas';
 import style from "./Consultas.module.scss";
-import { Consulta } from '../../../types/consultas';
+import { Consulta } from "../../../types/consultas"
 
 export default function Consultas() {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ export default function Consultas() {
     consultas,
     loading,
     handleDesmarcarConsulta,
-    handleToggleFavorito,
+    handleFavoritarMedico,
   } = useConsultas();
 
   const handleAgendarConsulta = () => {
@@ -54,7 +54,7 @@ export default function Consultas() {
               <ConsultaCard
                 key={consulta.agendamento_id}
                 consulta={consulta}
-                onToggleFavorito={handleToggleFavorito}
+                onFavoritarMedico={handleFavoritarMedico}
                 onDesmarcarConsulta={handleDesmarcarConsulta}
                 getStatusColor={getStatusColor}
               />

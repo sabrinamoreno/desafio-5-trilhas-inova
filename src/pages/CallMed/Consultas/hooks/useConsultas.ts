@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import fotoPadrao from "../../../../assets/CallMed/foto.png";
-import { Consulta } from '../../../../types/consultas'
+import { Consulta } from '../../../../types/consultas';
+import { Medico } from '../../../../types/medico';
 
 
 export const useConsultas = () => {
   const [consultas, setConsultas] = useState<Consulta[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [medico, setMedico] = useState<Medico[]>([]);
 
   const fetchConsultas = async () => {
     try {
@@ -55,10 +57,6 @@ export const useConsultas = () => {
   }, []);
 
   const handleDesmarcarConsulta = async (id: number | string) => {
-    if (!id) {
-      setError('ID da consulta inválido');
-      return;
-    }
 
     try {
       const token_local = localStorage.getItem('token');
@@ -84,10 +82,30 @@ export const useConsultas = () => {
     }
   };
 
-  const handleToggleFavorito = (id: number | string) => {
-    setConsultas(consultas.map(consulta => 
-      consulta.agendamento_id === id ? { ...consulta, favorito: !consulta.favorito } : consulta
-    ));
+  const handleFavoritarMedico = async (id: number | string) => {
+
+    try {
+      const token_local = localStorage.getItem('token');
+
+      const resposta = await fetch(`http://nisystem.vps-kinghost.net/api/medicos/favoritar/${id}`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token_local}`,
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (!resposta.ok) {
+        throw new Error('Falha ao favoritar médico');
+      }
+
+      setMedico(medico.map(medico =>
+        medico.id === id ? { ...medico, favorito: true } : medico
+      ));
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Erro ao favoritar médico');
+      console.error('Erro ao favoritar médico:', err);
+    }
   };
 
   return {
@@ -95,7 +113,7 @@ export const useConsultas = () => {
     loading,
     error,
     handleDesmarcarConsulta,
-    handleToggleFavorito,
+    handleFavoritarMedico,
     refetch: fetchConsultas
   };
 };
