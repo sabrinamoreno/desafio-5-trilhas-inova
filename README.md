@@ -10,17 +10,18 @@ Este projeto está sendo desenvolvido no âmbito do programa **Trilhas Inova**, 
 
 ## Funcionalidades 🧩 : 
 
-- Falta colocar
-- Falta colocar
-- Falta colocar
-- Falta colocar
+- `Funcionalidade 1`:Landing page interativa, com chamada para ação.
+- `Funcionalidade 2`:Quiz interativo, com informações úteis sobre saúde.
+- `Funcionalidade 3`:Tela de Cadastro e Login.
+- `Funcionalidade 4`:Dashboard interativo.
+- `Funcionalidade 5`:Telas de Consulta, Médicos favoritos, Agendamentos, e Perfil.
 
 ## Tecnologias a serem utilizadas 🚀 :
 
 - HTML5
 - CSS3
 - JavaScript
-- Frameworks: 
+- Frameworks ou Bibliotecas: React 
 - Ferramentas de design : Figma
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -37,7 +38,6 @@ Este projeto está sendo desenvolvido no âmbito do programa **Trilhas Inova**, 
 
 | Integrante                                | Trilha                             |
 |-------------------------------------------|------------------------------------|
-| Maria Clara Araujo Costa                  | Front end                          |
 | Gerson Moisés Diniz Nascimento            | Front end                          |
 | Israel De Jesus Souza Araujo              | Front end                          |
 | Antonio Agostinho Gomes Bezerra           | Front end                          |
@@ -48,4 +48,4 @@ Este projeto está sendo desenvolvido no âmbito do programa **Trilhas Inova**, 
 
 ## Status do projeto :
 
-![Nuxt](https://img.shields.io/badge/Em-Desenvolvimento...-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
+![Nuxt](https://img.shields.io/badge/C-Concluído...-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
