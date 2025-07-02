@@ -1,7 +1,7 @@
 .paciente{
     width: 90%;
-    background-color: #FFFFFF;
-    border: 1px solid #EAECF0;
+    background-color: var(--cor-3);
+    border: 1px solid var(--cor-4);
     border-radius: 8px;
     padding: 40px 40px;
     display: flex;
@@ -13,7 +13,7 @@
     font-family: var(--font-2);
     font-weight: 400;
     font-size: 18px;
-    color: #252A31;
+    color: var(--cor-8);
 }
 
 .paciente__campos{
@@ -29,7 +29,7 @@
     font-family: var(--font-2);
     font-weight: 400;
     font-size: 14px;
-    color: #252A31;
+    color: var(--cor-8);
 }
 
 .paciente__campos__input{
@@ -37,7 +37,7 @@
     height: 50px;
     border-radius: 8px;
     border: 1px solid #D0D5DD;
-    background-color: #F2F4F7;
+    background-color: var(--cor-7);
     font-family: var(--font-2);
     font-weight: 400;
     font-size: 16px;
@@ -46,7 +46,7 @@
 }
 
 .paciente__campos__input:hover{
-  border: 2px solid #2388E8;
+  border: 2px solid var(--cor-1);
 }
 
 @media (max-width: 1400px) {

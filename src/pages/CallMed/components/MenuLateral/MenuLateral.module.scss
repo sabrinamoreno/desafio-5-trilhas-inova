@@ -1,25 +1,25 @@
 .menu {
-    background-color: #FFFFFF;
+    background-color: var(--cor-3);
     width: 256px;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    border-right: 0.76px solid #EAECF0
-}
+    border-right: 0.76px solid var(--cor-4);
+  }
 
 .menu__cabecalho {
     display: flex;
     align-items: center;
     gap: 4px;
     padding: 31.5px 0;
-    border-bottom: 0.76px solid #EAECF0
+    border-bottom: 0.76px solid var(--cor-4);
 }
 
 .menu__cabecalho__titulo {
     font-family: var(--font-1);
     font-weight: 700;
     font-size: 19px;
-    color: #2388E8;
+    color: var(--cor-1);
 }
 
 .nav{
@@ -49,19 +49,19 @@
     font-family: var(--font-2);
     font-weight: 400;
     font-size: 16px;
-    color: #667085;
+    color: var(--cor-5);
 }
 
 
 .menu__opcoes:hover,
 .menu__opcoes__active {
-    background-color: #2388E8;
+    background-color: var(--cor-1);
     border-radius: 8px;
 }
 
 .menu__opcoes:hover .menu__opcoes__link,
 .menu__opcoes__active .menu__opcoes__link {
-  color: #EAECF0; 
+  color: var(--cor-4); 
 }
 
   @media (max-width: 1100px) {

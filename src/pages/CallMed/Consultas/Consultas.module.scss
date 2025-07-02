@@ -3,11 +3,11 @@
 }
 
 .consultas__topo {
-    background-color: #fff;
+    background-color: var(--cor-3);
 }
 
 .consultas__container {
-    background-color: #F2F4F7;
+    background-color: var(--cor-7);
     padding: 2rem;
     height: 100%;
 }
@@ -22,16 +22,16 @@
     font-family: var(--font-2);
     font-size: 1.2rem;
     font-weight: 400;
-    color: #252A31;
+    color: var(--cor-8);
 }
 
 .consultas__botaoPrimario {
-    background-color: #2388E8;
+    background-color: var(--cor-1);
     border-radius: 8px;
     font-family: var(--font-2);
     font-weight: 300;
     font-size: 0.9rem;
-    color: #fff;
+    color: var(--cor-3);
     padding: 0.5rem;
     border: none;
     cursor: pointer;
@@ -45,11 +45,11 @@
 }
 
 .consultas__carregando {
-    background-color: #F2F4F7;
+    background-color: var(--cor-7);
     padding: 2rem;
     height: 100%;
     font-family: var(--font-2);
     font-weight: 400;
     font-size: 18px;
-    color: #252A31;
+    color: var(--cor-8);
 }

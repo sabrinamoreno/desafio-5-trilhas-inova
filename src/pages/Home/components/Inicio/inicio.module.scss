@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--cor-3);
     gap: 10px;
 }
 
@@ -44,30 +44,30 @@
 .Inicio__Principal__Titulo {
     font-weight: 500;
     font-size: 44px;
-    color: #FFFFFF;
+    color: var(--cor-3);
 }
 
 .Inicio__Principal__Destaque {
     font-weight: 600;
     font-size: 90px;
-    color: #FFFFFF;
+    color: var(--cor-3);
 }
 
 .Inicio__Principal__texto {
     font-weight: 300;
     font-size: 20px;
-    color: #FFFFFF;
+    color: var(--cor-3);
 }
 
 .Inicio__Principal__cta {
     text-decoration: none;
-    border: 1px solid #FFFFFF;
+    border: 1px solid var(--cor-3);
     padding: 27px 62px;
     border-radius: 192px;
     margin-top: 45px;
     font-weight: 600;
     font-size: 20px;
-    color: #FFFFFF;
+    color: var(--cor-3);
     background: linear-gradient(to right, rgba(53, 143, 177, 0.9), rgba(0, 56, 161, 0.9));
 }
 

@@ -1,5 +1,5 @@
 .login__body {
-  background-color: #2388E8;
+  background-color: var(--cor-1);
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -27,6 +27,6 @@
     font-family: var(--font-2);
     font-size: 22px;
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--cor-3);
     letter-spacing: 0.02em;
 }

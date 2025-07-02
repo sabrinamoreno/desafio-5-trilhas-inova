@@ -15,7 +15,7 @@
   font-family: Inter;
   font-weight: 400;
   font-size: 18px;
-  color: #252a31;
+  color: var(--cor-8);
 }
 
 .lista {
@@ -33,8 +33,8 @@
   width: 307px;
   height: 170px;
   border-radius: 8px;
-  background-color: #ffffff;
-  border: 1px solid #eaecf0;
+  background-color: var(--cor-3);
+  border: 1px solid var(--cor-4);
 }
 
 .foto {
@@ -59,14 +59,14 @@
   font-family: Inter;
   font-weight: 400;
   font-size: 16px;
-  color: #252a31;
+  color: var(--cor-8);
 }
 
 .informacoes__especialidade {
   font-family: Inter;
   font-weight: 400;
   font-size: 14px;
-  color: #667085;
+  color: var(--cor-5);
 }
 
 .botao {
@@ -74,7 +74,7 @@
   height: 36px;
   border: none;
   border-radius: 8px;
-  background: #2388e8;
+  background: var(--cor-1);
   color: rgba(255, 255, 255, 1);
   cursor: pointer;
   white-space: nowrap;
@@ -85,7 +85,7 @@
 }
 
 .informacoes__delete:hover{
-  background-color: #2388E8;
+  background-color: var(--cor-1);
   border-radius: 8px;
   cursor: pointer;
 }

@@ -16,7 +16,8 @@ function Inicio() {
                 <p className={style.Inicio__Principal__texto}>
                     dados reais sobre a Telemedicina no Brasil
                 </p>
-                <a  href="#" className={style.Inicio__Principal__cta}>
+                <a  href="https://app.powerbi.com/view?r=eyJrIjoiMmNmOGIzNmYtODQyOC00ZjVhLTkzN2EtYzQyM2M5MjA1MWI3IiwidCI6ImIzYzAwMzk5LTEwNjEtNGEyOS04NWE2LWQxNWEyMzljM2FkNSJ9" 
+                className={style.Inicio__Principal__cta}>
                     Veja Agora!
                 </a>
             </div>

@@ -18,7 +18,9 @@ export const formatarData = (value: string) => {
 };
 
 
-export function formatarCPF(valor: string) {
+export function formatarCPF(valor?: string | null) {
+  if (!valor) return "";
+
   return valor
     .replace(/\D/g, "") 
     .replace(/(\d{3})(\d)/, "$1.$2")

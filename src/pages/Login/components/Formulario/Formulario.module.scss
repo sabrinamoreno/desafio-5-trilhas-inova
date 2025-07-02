@@ -4,7 +4,7 @@
     width: 452px;
     height: auto;
     padding: 18px 32px;
-    background-color: #fff;
+    background-color: var(--cor-3);
     border-radius: 25px;
     gap: 15px;
 }
@@ -13,7 +13,7 @@
     font-family: var(--font-2);
     font-size: 30px;
     font-weight: 600;
-    color: #1A4EA6;
+    color: var(--cor-2);
     margin-top: 20px;
     margin-bottom: 15px;
 }
@@ -29,12 +29,12 @@
     background-repeat: no-repeat;
     background-position: 10px center;
     padding: 16px 2px 16px 50px;
-    background-color: #90CAF9;
+    background-color: var(--cor-6);
     border-radius: 12px;
     font-family: var(--font-2);
     font-weight: 600;
     font-size: 22px;
-    color: #fff;
+    color: var(--cor-3);
     border: none;
 }
 
@@ -48,19 +48,19 @@
     background-repeat: no-repeat;
     background-position: 10px center;
     padding: 16px 10px 16px 50px;
-    background-color: #90CAF9;
+    background-color: var(--cor-6);
     border-radius: 12px;
     font-family: var(--font-2);
     font-weight: 600;
     font-size: 22px;
-    color: #fff;
+    color: var(--cor-3);
     border: none;
     width: 100%;
 }
 
 .login__formulario__email::placeholder,
 .login__formulario__senha::placeholder {
-    color: #fff;
+    color: var(--cor-3);
 }
 
 .login__formulario__esqueciSenha {
@@ -71,7 +71,7 @@
 
 .login__formulario__esqueciSenha a {
     text-decoration: none;
-    color: #2388E8;
+    color: var(--cor-1);
     font-family: var(--font-2);
     font-size: 19px;
     font-weight: 400;
@@ -80,10 +80,10 @@
 .login__formulario__email,
 .login__formulario__senha {
   &:focus {
-    border: 2px solid #2388E8;
+    border: 2px solid var(--cor-1);
     outline: none;
     box-shadow: 0 0 8px rgba(35, 136, 232, 0.6);
-    color: #fff;
+    color: var(--cor-3);
   }
 }
 
@@ -92,12 +92,12 @@
     background-repeat: no-repeat;
     background-position: 12px center;
     padding: 16px;
-    background-color: #2388E8;
+    background-color: var(--cor-1);
     border-radius: 12px;
     font-family: var(--font-2);
     font-weight: 600;
     font-size: 22px;
-    color: #fff;
+    color: var(--cor-3);
     border: none;
     cursor: pointer;
 }
@@ -113,7 +113,7 @@
 
 .login__formulario__conta a {
     text-decoration: none;
-    color: #1E90FF;
+    color: var(--cor-1);
 }
 
 .login__formulario__mostrarSenha {
@@ -142,7 +142,7 @@
     font-family: var(--font-2);
     font-weight: 600;
     font-size: 14px;
-    color: #1A4EA6;
+    color: var(--cor-2);
 }
 
 @media (max-width: 560px) { 

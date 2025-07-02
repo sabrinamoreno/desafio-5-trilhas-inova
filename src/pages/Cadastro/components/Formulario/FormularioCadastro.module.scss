@@ -94,10 +94,10 @@
 .cadastro__formulario__senha,
 .cadastro__formulario__confirmarSenha {
   &:focus {
-    border: 2px solid #2388E8;
+    border: 2px solid var(--cor-1);
     outline: none;
     box-shadow: 0 0 8px rgba(35, 136, 232, 0.6);
-    color: #fff;
+    color: var(--cor-3);
   }
 }
 
@@ -106,7 +106,7 @@
     font-family: var(--font-2);
     font-weight: 600;
     font-size: 14px;
-    color: #1A4EA6;
+    color: var(--cor-2);
 }
 
 @media (max-width: 560px) { 

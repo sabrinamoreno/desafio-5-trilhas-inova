@@ -1,10 +1,10 @@
 .consulta {
     display: flex;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--cor-3);
     padding: 1.2rem 1.5rem;
     border-radius: 8px;
-    border: 1px solid #EAECF0;
+    border: 1px solid var(--cor-4);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     gap: 0.7rem;
 }
@@ -13,7 +13,7 @@
     font-family: var(--font-2);
     font-size: 1rem;
     font-weight: 400;
-    color: #252A31;
+    color: var(--cor-8);
 }
 
 .consulta__especialidade,
@@ -21,7 +21,7 @@
     font-family: var(--font-2);
     font-size: 0.8rem;
     font-weight: 400;
-    color: #667085;
+    color: var(--cor-5);
     padding: 2px;
 }
 
@@ -46,7 +46,7 @@
     padding: 0.5rem;
     border: 1px solid #D0D5DD;
     cursor: pointer;
-    background-color: #fff;
+    background-color: var(--cor-3);
     margin-left: auto;
 }
 
@@ -55,7 +55,7 @@
     font-family: var(--font-2);
     font-weight: 400;
     font-size: 0.9rem;
-    color: #fff;
+    color: var(--cor-3);
     padding: 0.5rem;
     border: none;
     cursor: pointer;

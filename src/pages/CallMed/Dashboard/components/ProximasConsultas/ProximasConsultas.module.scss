@@ -1,7 +1,7 @@
 .conteudo {
     width: 95%;
-    background-color: #FFFFFF;
-    border: 1px solid #EAECF0;
+    background-color: var(--cor-3);
+    border: 1px solid var(--cor-4);
     border-radius: 8px;
     padding: 25px;
 }
@@ -10,7 +10,7 @@
     font-family: var(--font-2);
     font-weight: 400;
     font-size: 18px;
-    color: #252A31;
+    color: var(--cor-8);
 }
 
 .conteudo__lista {
@@ -21,7 +21,7 @@
 }
 
 .conteudo__lista__consulta {
-    background-color: #F2F4F7;
+    background-color: var(--cor-7);
     border-radius: 8px;
     padding: 25px;
     display: flex;
@@ -50,14 +50,14 @@
     font-family: var(--font-2);
     font-weight: 400;
     font-size: 16px;
-    color: #252A31;
+    color: var(--cor-8);
 }
 
 .consulta__contatiner__texto {
     font-family: var(--font-2);
     font-weight: 400;
     font-size: 14px;
-    color: #667085;
+    color: var(--cor-5);
 }
 
 .botao {
@@ -65,8 +65,8 @@
     width: 109px;
     height: 36px;
     border-radius: 8px;
-    background-color: #2388E8;
-    color: #FFFFFF;
+    background-color: var(--cor-1);
+    color: var(--cor-3);
 }
 
 .botao:hover {
