@@ -38,7 +38,7 @@ function MedicosFavoritos() {
             />
 
             <div className={style.agendadas__container}>
-                <h4 className={style.agendadas__container__numero}>{quantidadeFavoritos || "Carregando"}</h4>
+                <h4 className={style.agendadas__container__numero}>{quantidadeFavoritos}</h4>
                 <p className={style.agendadas__container__texto}>{textoConsulta}</p>
             </div>
         </div>

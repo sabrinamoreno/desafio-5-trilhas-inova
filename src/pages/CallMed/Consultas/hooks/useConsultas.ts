@@ -33,6 +33,7 @@ export const useConsultas = () => {
       
       const consultasFormatadas = data.map((consulta: any) => ({
         agendamento_id: consulta.agendamento_id,
+        medico_id: consulta.medico_id,
         medico_nome: consulta.medico_nome || 'Médico não informado',
         especialidade: consulta.especialidade || 'Especialidade não informada',
         data: formatarDataParaExibicao(consulta.data),
@@ -98,7 +99,7 @@ export const useConsultas = () => {
       if (!resposta.ok) {
         throw new Error('Falha ao favoritar médico');
       }
-
+  
       setMedico(medico.map(medico =>
         medico.id === id ? { ...medico, favorito: true } : medico
       ));

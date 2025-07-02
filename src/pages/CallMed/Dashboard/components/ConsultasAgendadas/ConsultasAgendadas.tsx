@@ -39,7 +39,7 @@ function ConsultasAgendadas() {
       />
       <div className={style.agendadas__container}>
         <h4 className={style.agendadas__container__numero}>
-          {quantidadeAgendadas || "Carregando"} 
+          {quantidadeAgendadas} 
         </h4>
         <p className={style.agendadas__container__texto}>Consultas Agendadas</p>
       </div>
