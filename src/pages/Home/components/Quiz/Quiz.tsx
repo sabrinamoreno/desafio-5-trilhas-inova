@@ -7,7 +7,7 @@ function Quiz() {
             <h2 className={style.Quiz__subtitulo}>
                 Prove seus conhecimentos em Telemedicina!
             </h2>
-            <a href="#" className={style.Quiz__cta} id="botao__quiz">
+            <a href="https://maycon-lima.itch.io/jogo-quiz-2x" className={style.Quiz__cta} id="botao__quiz">
                 Responda um Quiz agora!
             </a>
         </section>
