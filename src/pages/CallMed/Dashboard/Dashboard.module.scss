@@ -21,10 +21,18 @@
   .dashboard {
     width: 100vw;
   }
+
+   .dashboard__conteudo__consultas{
+        flex-direction: column;
+    }
 }
 
-@media (max-width: 1300px){
-    .dashboard__conteudo__consultas{
+@media (max-width: 420px) {
+  .dashboard {
+    width: 80vw;
+  }
+
+   .dashboard__conteudo__consultas{
         flex-direction: column;
     }
 }
